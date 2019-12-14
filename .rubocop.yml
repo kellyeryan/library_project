@@ -10,6 +10,7 @@ AllCops:
     - 'config/**'
     - 'config/**/*'
     - 'bin/**'
+    - 'node_modules/**/*'
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
@@ -31,9 +32,6 @@ Naming/UncommunicativeMethodParamName:
     - 'on'
     - in
     - at
-
-Rails:
-  Enabled: false
 
 Style/Documentation:
   Enabled: false
