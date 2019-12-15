@@ -9,8 +9,7 @@ class Patron < ApplicationRecord
   validates :password, length: { in: 8..16 }
   validates :library_card_number, length: { is: 10 }
 
-  def self.name
-    binding.pry
-    # "#{patron.first_name}" + "#{patron.last_name}"
+  def name
+   "#{self.first_name} " + "#{self.last_name}"
   end
 end
