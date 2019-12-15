@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_194544) do
+ActiveRecord::Schema.define(version: 2019_12_14_211242) do
+
+  create_table "books", force: :cascade do |t|
+    t.integer "library_id"
+    t.integer "patron_id"
+    t.string "title"
+    t.string "author_last_name"
+    t.string "author_first_name"
+    t.string "catalog_number"
+  end
+
+  create_table "libraries", force: :cascade do |t|
+    t.string "name"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+  end
 
   create_table "patrons", force: :cascade do |t|
     t.string "first_name"

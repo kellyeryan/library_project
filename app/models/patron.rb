@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Patron < ApplicationRecord
-  has_many :books
-  has_many :libraries, through: :books
+  has_many :book_loans
+  has_many :books, through: :book_loans
 
   has_secure_password
 

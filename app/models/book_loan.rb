@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
-class Book < ApplicationRecord
+class BookLoan < ApplicationRecord
   belongs_to :library
+  belongs_to :patron
 end
