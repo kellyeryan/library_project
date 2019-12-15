@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_211242) do
+ActiveRecord::Schema.define(version: 2019_12_15_173259) do
+
+  create_table "book_loans", force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "patron_id"
+    t.boolean "returned"
+  end
 
   create_table "books", force: :cascade do |t|
     t.integer "library_id"
-    t.integer "patron_id"
     t.string "title"
     t.string "author_last_name"
     t.string "author_first_name"

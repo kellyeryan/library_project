@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   end
   resources :books, only: [:show]
   resources :patrons, only: [:show, :new, :create]
+  resources :book_loans, only: [:index]
+  root "static_pages#home"
+  get "/signin", to: "sessions#new"
+  post "/session", to: "sessions#create"
+  get "logout", to: "sessions#destroy"
 end
