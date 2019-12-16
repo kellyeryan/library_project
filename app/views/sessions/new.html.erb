@@ -1,0 +1,23 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+
+
+<h2>Please fill in your library card number and your password</h2>
+
+<%= form_with scope: :patron do |form| %>
+  <p>
+    <%= form.label :library_card_number %>
+    <%= form.text_field :library_card_number %>
+  </p>
+
+  <p>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </p>
+
+  <p>
+    <%= form.submit :Submit %>
+  </p>
+
+<% end %>

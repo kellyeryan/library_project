@@ -27,7 +27,6 @@ Library.create(
   state: "PA"
 )
 
-
 Patron.create(
   first_name: "Wilson",
   last_name: "Contreras",
@@ -59,130 +58,184 @@ Patron.create(
   password: "fis1yee4jet"
 )
 
+Author.create(
+  first_name: "Marlon",
+  last_name: "James"
+)
+
+Author.create(
+  first_name: "Hiro",
+  last_name: "Arikawa"
+)
+
+Author.create(
+  first_name: "Ben",
+  last_name: "Aaronovitch"
+)
+
+Author.create(
+  first_name: "Neal",
+  last_name: "Stephenson"
+)
+
+Author.create(
+  first_name: "Madeline",
+  last_name: "Miller"
+)
+
+Author.create(
+  first_name: "Ted",
+  last_name: "Chiang"
+)
+
+Author.create(
+  first_name: "Naomi",
+  last_name: "Mitchison"
+)
+
+Author.create(
+  first_name: "Leigh",
+  last_name: "Bardugo"
+)
+
+Author.create(
+  first_name: "Max",
+  last_name: "Gladstone"
+)
+
+Author.create(
+  first_name: "Philip",
+  last_name: "Pullman"
+)
+
+Author.create(
+  first_name: "Alix",
+  last_name: "Harrow"
+)
+
+Author.create(
+  first_name: "Jodi",
+  last_name: "Taylor"
+)
+
+Author.create(
+  first_name: "Claire",
+  last_name: "North"
+)
+
+Author.create(
+  first_name: "Graeme",
+  last_name: "Simsion"
+)
+
 Book.create(
   title: "The Rosie Project",
-  author_first_name: "Graeme",
-  author_last_name: "Simsion",
   catalog_number: "LB 2328.C34",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The First Fifteen Lives of Harry August",
-  author_first_name: "Claire",
-  author_last_name: "North",
   catalog_number: "LB 6453.B10",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "Black Leopard Red Wolf",
-  author_first_name: "Marlon",
-  author_last_name: "James",
   catalog_number: "LB 3333.N06",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "Just One Damed Thing After Another",
-  author_first_name: "Jodi",
-  author_last_name: "Taylor",
   catalog_number: "LB 2049.J06",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The Ten Thousand Doors of January",
-  author_first_name: "Alix",
-  author_last_name: "Harrow",
   catalog_number: "LB 9912.M13",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The Secret Commonwealth",
-  author_first_name: "Philip",
-  author_last_name: "Pullman",
   catalog_number: "LB 5279.U76",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "This Is How You Lose the Time War",
-  author_first_name: "Max",
-  author_last_name: "Gladstone",
   catalog_number: "LB 8492.S43",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The Ninth House",
-  author_first_name: "Leigh",
-  author_last_name: "Bardugo",
   catalog_number: "LB 5732.A23",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "Travel Light",
-  author_first_name: "Naomi",
-  author_last_name: "Mitchison",
   catalog_number: "LB 3201.V54",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The Travelling Cat Chronicles",
-  author_first_name: "Hiro",
-  author_last_name: "Arikawa",
   catalog_number: "LB 4783.B11",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "Quicksilver",
-  author_first_name: "Neal",
-  author_last_name: "Stephenson",
   catalog_number: "LB 3802.I83",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The System of the World",
-  author_first_name: "Neal",
-  author_last_name: "Stephenson",
   catalog_number: "LB 3802.I85",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "Lies Sleeping",
-  author_first_name: "Ben",
-  author_last_name: "Aaronovitch",
   catalog_number: "LB 3827.H76",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The Hanging Tree",
-  author_first_name: "Ben",
-  author_last_name: "Aaronovitch",
   catalog_number: "LB 3827.H90",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "Exhalation",
-  author_first_name: "Ted",
-  author_last_name: "Chiang",
   catalog_number: "LB 4793.C43",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
 
 Book.create(
   title: "The Song of Achilles",
-  author_first_name: "Madeline",
-  author_last_name: "Miller",
   catalog_number: "LB 6472.R43",
-  library: Library.all.sample
+  library: Library.all.sample,
+  author: Author.all.sample
 )
