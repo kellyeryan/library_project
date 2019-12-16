@@ -1,3 +1,7 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+
 <h1>Sign Up for a Library Account</h1>
 
 <h3><%= form_with scope: :patron, url: patrons_path do |form| %>

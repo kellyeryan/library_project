@@ -9,12 +9,14 @@ class PatronsController < ApplicationController
 
   def create
     patron = Patron.new(patron_params)
-    binding.pry
     if patron.save
+      patron.library_card_number = patron.library_card
       session[:patron_id] = patron.id
+      binding.pry
       redirect_to patron_path(patron)
     else
       redirect_to new_patron_path
+      flash.now[:notice] = "Please try again."
     end
   end
 

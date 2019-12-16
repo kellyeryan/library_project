@@ -6,10 +6,11 @@ class Patron < ApplicationRecord
 
   has_secure_password
 
-  validates :password, length: { in: 8..16 }
-  validates :library_card_number, length: { is: 10 }
-
   def name
     "#{first_name} #{last_name}"
+  end
+
+  def library_card
+    rand(1e9...1e10).to_i
   end
 end
