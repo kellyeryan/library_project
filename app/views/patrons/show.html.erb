@@ -11,8 +11,8 @@
 
 <p>
   To get started checking out a book, first choose your library:
-  <%= form_with scope: :library do |form| %>
-    <%= form.collection_select :library_id, Library.all, :id, :name %>
+  <%= form_with model: @library do |form| %>
+    <%= form.collection_select(:library_id, Library.all, :id, :name) %>
     <%= form.submit %>
   <% end %>
 </p>

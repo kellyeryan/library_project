@@ -13,8 +13,4 @@ class Patron < ApplicationRecord
   def library_card
     rand(1e9...1e10).to_i
   end
-
-  def not_pa_resident
-    "If you don't live in Pennsylvania, you can't get a library card. Sorry!"
-  end
 end
