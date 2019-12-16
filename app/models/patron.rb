@@ -10,6 +10,6 @@ class Patron < ApplicationRecord
   validates :library_card_number, length: { is: 10 }
 
   def name
-   "#{self.first_name} " + "#{self.last_name}"
+   "#{first_name} " + "#{last_name}"
   end
 end
