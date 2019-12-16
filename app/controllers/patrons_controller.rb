@@ -10,9 +10,8 @@ class PatronsController < ApplicationController
   def create
     patron = Patron.new(patron_params)
     if patron.save
-      patron.library_card_number = patron.library_card
       session[:patron_id] = patron.id
-      binding.pry
+      patron.update(library_card_number:patron.library_card)
       redirect_to patron_path(patron)
     else
       redirect_to new_patron_path
