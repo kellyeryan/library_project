@@ -6,6 +6,11 @@ class LibrariesController < ApplicationController
     @libraries = Library.all
   end
 
+  def new
+    @library = Library.new
+    @library.books.build
+  end
+
   def show
     @library = Library.find(params[:id])
   end

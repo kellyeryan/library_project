@@ -11,7 +11,7 @@ Requirements:
 - [ ] Includes reasonable validations
 - [ ] Includes a class level ActiveRecord scope method
 - [x] Includes signup, login and logout functionality (e.g. Devise)
-- [ ] Includes nested resource show or index (e.g. users/2/recipes)
+- [X] Includes nested resource show or index (e.g. users/2/recipes)
 - [ ] Includes nested resource form (recipes/1/ingredients/new)
 - [ ] Includes form display of validation errors
 - [ ] Includes Unit tests for at least 2 of your models
