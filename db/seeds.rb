@@ -21,7 +21,7 @@ Library.create(
 )
 
 Library.create(
-  name: "Windy City Library",
+  name: "Pretty City Library",
   street_address: "3000 Brain Avenue",
   city: "Media",
   state: "PA"
