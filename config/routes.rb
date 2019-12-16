@@ -10,7 +10,5 @@ Rails.application.routes.draw do
   root "static_pages#home"
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"
-  get "/signup", to: "patrons#new"
-  post "/signup", to: "patrons#create"
-  get "logout", to: "sessions#destroy"
+  get "/logout", to: "sessions#destroy"
 end
