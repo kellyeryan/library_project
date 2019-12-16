@@ -31,31 +31,36 @@ Patron.create(
   first_name: "Wilson",
   last_name: "Contreras",
   library_card_number: 3_689_221_971,
-  password: "cust4gen1ve"
+  password: "cust4gen1ve",
+  pa_resident: true
 )
 Patron.create(
   first_name: "Anthony",
   last_name: "Rizzo",
   library_card_number: 2_414_254_605,
-  password: "gauc5fur1drod"
+  password: "gauc5fur1drod",
+  pa_resident: true
 )
 Patron.create(
   first_name: "Kris",
   last_name: "Bryant",
   library_card_number: 9_935_025_279,
-  password: "zort9rheg8tarm"
+  password: "zort9rheg8tarm",
+  pa_resident: true
 )
 Patron.create(
   first_name: "Kyle",
   last_name: "Schwarber",
   library_card_number: 2_974_850_008,
-  password: "gnos1gnef9zok"
+  password: "gnos1gnef9zok",
+  pa_resident: true
 )
 Patron.create(
   first_name: "Javier",
   last_name: "Baez",
   library_card_number: 2_080_286_161,
-  password: "fis1yee4jet"
+  password: "fis1yee4jet",
+  pa_resident: true
 )
 
 Author.create(

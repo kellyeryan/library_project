@@ -1,6 +1,6 @@
 <h1>Sign Up for a Library Account</h1>
 
-<%= form_with scope: :patron do |form| %>
+<h3><%= form_with scope: :patron do |form| %>
   <p>
     <%= form.label :First_Name %>
     <%= form.text_field :first_name%>
@@ -17,15 +17,17 @@
   </p>
 
   <p>
-    <%= form.label :password_confirmation %>
+    <%= form.label :password_confirmation, "Password Confirmation" %>
     <%= form.password_field :password_confirmation %>
   </p>
 
   <p>
-    <%= form.label :pa_resident %>
-    <%= form.checkbox :pa_resident, "I live in Pennsylvania" %>
+    <%= form.label :pa_resident, "Check box if you are a Pennsylvania resident" %>
+    <%= form.check_box :pa_resident %>
+  </p>
+
   <p>
     <%= form.submit :Signup %>
   </p>
 
-<% end %>
+<% end %></h3>
