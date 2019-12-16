@@ -4,12 +4,14 @@ class SessionsController < ActionController::Base
   def new; end
 
   def create
-    patron = Patron.find_by(library_card_number: params[:patron][:library_card_number])
+    patron = Patron.find_by(library_card_number:
+      params[:patron][:library_card_number])
     if patron && patron.authenticate(params[:patron][:password])
       session[:patron_id] = patron.id
       redirect_to patron_path(patron), notice: "Success! You've been logged in!"
     else
-      flash.now[:notice] = "We're sorry, but your library card number or password is invalid. Please try again."
+      flash.now[:notice] = "We're sorry,
+        but your library card number or password is invalid. Please try again."
       render "new"
     end
   end
