@@ -1,15 +1,20 @@
 <h2>Donate a Book!</h2>
 
-<%= form_for @library do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-
-  <%= f.fields_for :books do |book| %>
-    <%= book.label :title %>
-    <%= book.text_field :title %><br>
-    <%= book.label :author %>
-    <%= book.text_field :author %><br>
+<%= form_with(model: [@library, @book]) do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <%= f.fields_for :author, @author do |ff| %>
+    <p>
+      <%= ff.label "Author's first name" %>
+      <%= ff.text_field :first_name %><br>
+    </p>
+    <p>
+      <%= ff.label "Author's last name" %>
+      <%= ff.text_field :last_name %><br>
+    </p>
   <% end %>
-
-  <% f.submit %>
+  <%= f.submit %>
 <% end %>
+

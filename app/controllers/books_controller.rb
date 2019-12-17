@@ -1,12 +1,24 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
+  before_action :library
+
   def index
     @books = Book.all
   end
 
   def new
     @book = Book.new
+    @author = @book.build_author
+  end
+
+  def create
+    @book = Book.new(book_params)
+    @book.update(
+      library_id: @library.id,
+      catalog_number: @book.make_catalog_number
+    )
+    redirect_to book_path(@book)
   end
 
   def show
@@ -16,9 +28,11 @@ class BooksController < ApplicationController
 private
 
   def book_params
-    params.require(:book).permit(
-      :title,
-      :catalog_number
-    )
+    params.require(:book).permit(:title,
+      :author_attributes => [:first_name, :last_name])
+  end
+
+  def library
+    @library = Library.find(params[:library_id])
   end
 end

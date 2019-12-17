@@ -1,0 +1,5 @@
+<% @authors_a = @authors.sort_by { |author| author.last_name } %>
+<% @authors_a.each do |author| %>
+  <%= link_to author.author_name, author_path(author) %><br>
+<% end %>
+

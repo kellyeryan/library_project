@@ -135,112 +135,112 @@ Author.create(
 
 Book.create(
   title: "The Rosie Project",
-  catalog_number: "LB 2328.C34",
+  catalog_number: "LB 2328.34",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The First Fifteen Lives of Harry August",
-  catalog_number: "LB 6453.B10",
+  catalog_number: "LB 6453.10",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "Black Leopard Red Wolf",
-  catalog_number: "LB 3333.N06",
+  catalog_number: "LB 3333.06",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "Just One Damed Thing After Another",
-  catalog_number: "LB 2049.J06",
+  catalog_number: "LB 2049.06",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The Ten Thousand Doors of January",
-  catalog_number: "LB 9912.M13",
+  catalog_number: "LB 9912.13",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The Secret Commonwealth",
-  catalog_number: "LB 5279.U76",
+  catalog_number: "LB 5279.76",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "This Is How You Lose the Time War",
-  catalog_number: "LB 8492.S43",
+  catalog_number: "LB 8492.43",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The Ninth House",
-  catalog_number: "LB 5732.A23",
+  catalog_number: "LB 5732.23",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "Travel Light",
-  catalog_number: "LB 3201.V54",
+  catalog_number: "LB 3201.54",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The Travelling Cat Chronicles",
-  catalog_number: "LB 4783.B11",
+  catalog_number: "LB 4783.11",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "Quicksilver",
-  catalog_number: "LB 3802.I83",
+  catalog_number: "LB 3802.83",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The System of the World",
-  catalog_number: "LB 3802.I85",
+  catalog_number: "LB 3802.85",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "Lies Sleeping",
-  catalog_number: "LB 3827.H76",
+  catalog_number: "LB 3827.76",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The Hanging Tree",
-  catalog_number: "LB 3827.H90",
+  catalog_number: "LB 3827.90",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "Exhalation",
-  catalog_number: "LB 4793.C43",
+  catalog_number: "LB 4793.43",
   library: Library.all.sample,
   author: Author.all.sample
 )
 
 Book.create(
   title: "The Song of Achilles",
-  catalog_number: "LB 6472.R43",
+  catalog_number: "LB 6472.43",
   library: Library.all.sample,
   author: Author.all.sample
 )

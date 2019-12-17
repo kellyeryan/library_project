@@ -11,8 +11,8 @@ Requirements:
 - [ ] Includes reasonable validations
 - [ ] Includes a class level ActiveRecord scope method
 - [x] Includes signup, login and logout functionality (e.g. Devise)
-- [X] Includes nested resource show or index (e.g. users/2/recipes)
-- [ ] Includes nested resource form (recipes/1/ingredients/new)
+- [x] Includes nested resource show or index (e.g. users/2/recipes)
+- [x] Includes nested resource form (recipes/1/ingredients/new)
 - [ ] Includes form display of validation errors
 - [ ] Includes Unit tests for at least 2 of your models
 - [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
