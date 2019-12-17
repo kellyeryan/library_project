@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   resources :libraries, only: [:index, :show] do
-    resources :books, only: [:index, :new, :create]
+    resources :books, only: [:index, :new, :create, :show]
   end
 
   resources :authors, only: [:index, :new, :create, :show]
-
-  resources :books, only: [:show]
 
   resources :patrons, only: [:show, :new, :create]
   resources :book_loans, only: [:index]

@@ -18,7 +18,7 @@ class BooksController < ApplicationController
       library_id: @library.id,
       catalog_number: @book.make_catalog_number
     )
-    redirect_to book_path(@book)
+    redirect_to library_books_path
   end
 
   def show
