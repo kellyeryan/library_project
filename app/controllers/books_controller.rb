@@ -14,10 +14,11 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.update(
-      library_id: @library.id,
-      catalog_number: @book.make_catalog_number
-    )
+    binding.pry
+      @book.update(
+        library_id: @library.id,
+        catalog_number: @book.make_catalog_number
+      )
     redirect_to library_books_path
   end
 
