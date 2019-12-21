@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   before_action :library
 
   def index
-    @books = Book.all
+    @books = @library.books
   end
 
   def new
