@@ -12,15 +12,10 @@
       </td>
       <td><%= book.author.author_name %></td>
       <td>
-        <% if book.patrons.exists? %>
+        <% if book.checked_out? %>
           <%= "Book already checked out!" %>
         <% else %>
           <%= "Available" %>
-        <% end %>
-      </td>
-      <td>
-        <% if !book.patrons.exists? %>
-          <%= label(:returned, "Check out") %>
         <% end %>
       </td>
     </tr>

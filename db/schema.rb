@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_151859) do
+ActiveRecord::Schema.define(version: 2019_12_21_194508) do
 
   create_table "authors", force: :cascade do |t|
     t.string "last_name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_151859) do
   create_table "book_loans", force: :cascade do |t|
     t.integer "book_id"
     t.integer "patron_id"
-    t.boolean "returned"
+    t.boolean "checked_out", default: true
   end
 
   create_table "books", force: :cascade do |t|
