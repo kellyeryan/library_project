@@ -7,10 +7,15 @@ class BookLoansController < ApplicationController
 
   def new
     @book_loan = BookLoan.new
+    @book_loan.patron_id =
   end
 
   def create
     BookLoan.new(book_loan_params)
+  end
+
+  def show
+    @book_loan = BookLoan.find(params[:id])
   end
 
 private
