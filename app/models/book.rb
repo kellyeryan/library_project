@@ -8,6 +8,10 @@ class Book < ApplicationRecord
 
   accepts_nested_attributes_for :author
 
+  def checked_out?
+    book_loans.checked_out?
+  end
+
   def make_catalog_number
     "LB " + rand.to_s[2..5] + "." + rand.to_s[2..3]
   end
