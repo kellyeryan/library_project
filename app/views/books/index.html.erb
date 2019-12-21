@@ -1,6 +1,30 @@
-<ol>
-<% @books.each do |book| %>
-    <li><%= link_to book.title, library_book_path(@library, book) %></li>
-<% end %>
-</ol>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Book Status</th>
+    <th>Check Out!</th>
+  </tr>
+  <% @books.each do |book| %>
+    <tr>
+      <td>
+        <%= link_to book.title, library_book_path(@library, book) %>
+      </td>
+      <td><%= book.author.author_name %></td>
+      <td>
+        <% if book.patrons.exists? %>
+          <%= "Book already checked out!" %>
+        <% else %>
+          <%= "Available" %>
+        <% end %>
+      </td>
+      <td>
+        <% if !book.patrons.exists? %>
+          <%= label(:returned, "Check out") %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
 
