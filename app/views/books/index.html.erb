@@ -18,6 +18,11 @@
           <%= "Available" %>
         <% end %>
       </td>
+      <td>
+        <% if !book.checked_out? %>
+          <%= link_to "Check out", book_loans_path %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
