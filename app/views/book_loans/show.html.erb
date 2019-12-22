@@ -6,7 +6,10 @@ Other books you have checked out:
 
 <% BookLoan.all.each do |loan| %>
   <%= loan.book.title if loan.patron_id == @book_loan.patron_id %><br>
+  <%= link_to "Return Book", book_loan_path(loan) %>
 <% end %>
+
+
 
 
 
