@@ -23,4 +23,11 @@
 <% end %>
 </ol>
 
+<p>
+  Here are the books you've checked out!<br>
+  <% BookLoan.where(patron: @patron).each do |loan| %>
+    <%= loan.book.title %><br>
+  <% end %>
+</p>
+
 <%= link_to "Logout", logout_path %>

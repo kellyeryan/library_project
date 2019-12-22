@@ -1,15 +1,13 @@
-Hi <%= @book_loan.patron.name %>!<br>
+Hi <%= @book_loan.patron.name %>!<br><br>
 
-You have just checked out <%= @book_loan.book.title %> from the <%= @book_loan.book.library.name %>.<br>
+You have just checked out <%= @book_loan.book.title %> from the <%= @book_loan.book.library.name %>.<br><br>
 
 Other books you have checked out:
-
-<% BookLoan.all.each do |loan| %>
-  <%= loan.book.title if loan.patron_id == @book_loan.patron_id %><br>
-  <%= link_to "Return Book", book_loan_path(loan) %>
+<br><br>
+<% BookLoan.where(patron: @book_loan.patron).each do |loan| %>
+  <%= loan.book.title %><br>
+  <%= form_with url: book_loan_path(loan.id), method: :patch do |f| %>
+    <%= f.submit "Return this book" %>
+  <% end %>
+  <br>
 <% end %>
-
-
-
-
-
