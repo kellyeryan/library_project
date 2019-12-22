@@ -1,1 +1,12 @@
-show.html.erb
+Hi <%= @book_loan.patron.name %>!<br>
+
+You have just checked out <%= @book_loan.book.title %> from the <%= @book_loan.book.library.name %>.<br>
+
+Other books you have checked out:
+
+<% BookLoan.all.each do |loan| %>
+  <%= loan.book.title if loan.patron_id == @book_loan.patron_id %><br>
+<% end %>
+
+
+
