@@ -1,9 +1,13 @@
-<%= @book.title %><br>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Libraries</th>
+  </tr>
+  <tr>
+    <th><%= @book.title %></th>
+    <th><%= @book.author.author_name%></th>
+    <th><%= @libraries.name %></th>
+  </tr>
+</table>
 
-<%= @book.id %><br>
-
-<%= @book.author.first_name %> <br>
-
-<%= @book.author.last_name %><br>
-
-<%= @book.author_id %>

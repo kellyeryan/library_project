@@ -28,6 +28,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @libraries = Library.find_by(books: @book)
   end
 
 private
