@@ -3,6 +3,7 @@
 class PatronsController < ApplicationController
   def show
     @patron = Patron.find(params[:id])
+    @book_loans = BookLoan.where(patron: @patron, checked_out: true)
   end
 
   def new; end

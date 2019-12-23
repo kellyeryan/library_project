@@ -16,6 +16,6 @@ class BookLoansController < ApplicationController
   def update
     @book_loan = BookLoan.find(params[:id])
     @book_loan.update(checked_out: false)
-    redirect_to library_books_path(@book_loan.book.library_id)
+    redirect_to patron_path(@book_loan.patron)
   end
 end
