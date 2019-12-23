@@ -6,11 +6,7 @@ class BookLoansController < ApplicationController
       book_id: params[:book_id],
       patron_id: session[:patron_id]
     )
-    redirect_to book_loan_path(@book_loan)
-  end
-
-  def show
-    @book_loan = BookLoan.find(params[:id])
+    redirect_to patron_path(@book_loan.patron)
   end
 
   def update
