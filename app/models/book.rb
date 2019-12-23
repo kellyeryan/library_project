@@ -13,6 +13,6 @@ class Book < ApplicationRecord
   end
 
   def make_catalog_number
-    "LB " + rand.to_s[2..5] + "." + rand.to_s[2..3]
+    rand.to_s[2..5] + "." + rand.to_s[2..3]
   end
 end

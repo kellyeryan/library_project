@@ -2,12 +2,25 @@
   <tr>
     <th>Title</th>
     <th>Author</th>
+    <th>Genre</th>
+    <th>Summary</th>
     <th>Libraries</th>
+    <th>Check Out</th>
   </tr>
   <tr>
     <th><%= @book.title %></th>
     <th><%= @book.author.author_name%></th>
+    <th><%= @book.genre%></th>
+    <th><%= @book.summary %></th>
     <th><%= @libraries.name %></th>
+    <th>
+    <% if !@book.checked_out? %>
+          <%= form_with(model: @book.book_loans.build) do |f| %>
+            <input type="hidden" name="book_id" value="<%= @book.id %>" />
+            <%= f.submit "Check out this book" %>
+          <% end %>
+        </th>
+      <% end %>
   </tr>
 </table>
 

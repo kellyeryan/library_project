@@ -9,20 +9,6 @@
 </p>
 
 <p>
-  To get started checking out a book, first choose your library:
-<ol>
-<% Library.all.each do |library| %>
-  <li>
-    <%= link_to library.name, library_path(library) %><br>
-    <%= library.street_address %><br>
-    <%= library.city %>,
-    <%= library.state %><br>
-    <br>
-  </li>
-<% end %>
-</ol>
-
-<p>
   Here are the books you've checked out!<br>
 </p>
 <table>
@@ -45,5 +31,20 @@
     </tr>
   <% end %>
 </table>
+
+<p>
+  To get started checking out a book, first choose your library:
+<ol>
+<% Library.all.each do |library| %>
+  <li>
+    <%= link_to library.name, library_path(library) %><br>
+    <%= library.street_address %><br>
+    <%= library.city %>,
+    <%= library.state %><br>
+    <br>
+  </li>
+<% end %>
+</ol>
+
 
 <%= link_to "Logout", logout_path %>

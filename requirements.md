@@ -23,8 +23,9 @@ Requirements:
 - [ ] Includes reasonable validations
 
 
-- [ ] Includes a class level ActiveRecord scope method
+- [x] Includes a class level ActiveRecord scope method
 
+BookLoans checked_out true scope
 
 - [x] Includes signup, login and logout functionality (e.g. Devise)
 
