@@ -30,3 +30,10 @@ table, th, td {
   padding: 15px;
   text-align: left;
 }
+
+body, p {
+  font-family: "Verdana";
+  font-size: 14px;
+}
+
+

@@ -1,6 +1,20 @@
 <h2>Donate a Book!</h2>
 
 <%= form_with(model: [@library, @book]) do |f| %>
+
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+         <h2>
+          <%= pluralize(@book.errors.count, "error") %> prohibited your book from being saved:
+         </h2>
+          <ol>
+         <% @book.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+         <% end %>
+          </ol>
+        </div>
+  <% end %>
+
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-before_action :current_patron
-before_action :require_logged_in, except: %i[new create home]
+  before_action :current_patron
+  before_action :require_logged_in, except: %i[new create home]
 
   def logged_in?
-    !!current_patron
+    current_patron
   end
 
 private

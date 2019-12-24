@@ -33,17 +33,17 @@
 </table>
 
 <p>
-  To get started checking out a book, first choose your library:
+  To get started checking out a book, first choose the library closest to you:
 <ol>
-<% Library.all.each do |library| %>
-  <li>
-    <%= link_to library.name, library_path(library) %><br>
-    <%= library.street_address %><br>
-    <%= library.city %>,
-    <%= library.state %><br>
-    <br>
-  </li>
-<% end %>
+  <% Library.all.each do |library| %>
+    <li>
+      <%= link_to library.name, library_path(library) %><br>
+      <%= library.street_address %><br>
+      <%= library.city %>,
+      <%= library.state %><br>
+      <br>
+    </li>
+  <% end %>
 </ol>
 
 

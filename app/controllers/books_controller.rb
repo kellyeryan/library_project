@@ -18,11 +18,9 @@ class BooksController < ApplicationController
       last_name: book.author.last_name,
       first_name: book.author.first_name
     )
-    book.update(
-      author: author,
-      library: library,
-      catalog_number: book.make_catalog_number
-    )
+    book.update(author: author,
+                library: library,
+                catalog_number: book.make_catalog_number)
     redirect_to library_books_path
   end
 

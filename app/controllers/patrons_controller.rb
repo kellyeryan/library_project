@@ -6,17 +6,18 @@ class PatronsController < ApplicationController
     @book_loans = BookLoan.checked_out.where(patron: @patron)
   end
 
-  def new; end
+  def new
+    @patron = Patron.new
+  end
 
   def create
-    patron = Patron.new(patron_params)
-    if patron.save
+    @patron = Patron.new(patron_params)
+    if @patron.save
       session[:patron_id] = patron.id
-      patron.update(library_card_number: patron.library_card)
-      redirect_to patron_path(patron)
+      @patron.update(library_card_number: @patron.library_card)
+      redirect_to patron_path(@patron)
     else
-      redirect_to new_patron_path
-      flash.now[:notice] = "Please try again."
+      render new_patron_path
     end
   end
 

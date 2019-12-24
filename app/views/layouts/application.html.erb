@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Library Home Page</title>
+    <title>Library</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +9,8 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <a class="navbar-brand" href="<%= root_url %>"/>Library Home Page</a>
+        <a class="navbar-brand" href="<%= patron_path(session[:patron_id]) %>"/>Patron Account</a>
         <a class="navbar-brand" href="<%= logout_url %>"/>Logout</a>
         </div>
         <div class="navbar-collapse collapse">

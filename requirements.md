@@ -20,8 +20,10 @@ Requirements:
 
 # need to add one to book_loan
 
-- [ ] Includes reasonable validations
+- [X] Includes reasonable validations
 
+first and last name required for patrons upon sign up
+patron password needs to be between 8 and 20 letters
 
 - [x] Includes a class level ActiveRecord scope method
 
@@ -36,11 +38,14 @@ BookLoans checked_out true scope
 - [x] Includes nested resource form (recipes/1/ingredients/new)
 
 
-- [ ] Includes form display of validation errors
+- [X] Includes form display of validation errors
 
+If patron sign-up doesn't meet requirements, it will trigger validation errors.
 
 - [ ] Includes Unit tests for at least 2 of your models
+
 - [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
+
 - [ ] Includes a `README.md` with an application description and installation guide
 
 Confirm:

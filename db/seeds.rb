@@ -19,7 +19,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     library_card_number: Faker::Number.number(digits: 10),
-    password: Faker::Alphanumeric.alphanumeric(number: 10),
+    password: Faker::Alphanumeric.alphanumeric(number: 10)
   )
 end
 
