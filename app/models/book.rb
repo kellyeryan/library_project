@@ -8,6 +8,8 @@ class Book < ApplicationRecord
 
   accepts_nested_attributes_for :author
 
+  validates_associated :author
+
   def checked_out?
     book_loans.checked_out?
   end

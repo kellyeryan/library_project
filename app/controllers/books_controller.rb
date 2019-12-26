@@ -13,15 +13,18 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
+    @book = Book.new(book_params)
     author = Author.find_or_create_by(
-      last_name: book.author.last_name,
-      first_name: book.author.first_name
+      last_name: @book.author.last_name,
+      first_name: @book.author.first_name
     )
-    book.update(author: author,
-                library: library,
-                catalog_number: book.make_catalog_number)
-    redirect_to library_books_path
+    if @book.update(author: author,
+                    library: library,
+                    catalog_number: @book.make_catalog_number)
+      redirect_to library_books_path
+    else
+      render :new
+    end
   end
 
   def show
