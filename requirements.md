@@ -42,7 +42,7 @@ BookLoans checked_out true scope
 
 If patron sign-up doesn't meet requirements, it will trigger validation errors.
 
-- [ ] Includes Unit tests for at least 2 of your models
+- [x] Includes Unit tests for at least 2 of your models
 
 - [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
 
