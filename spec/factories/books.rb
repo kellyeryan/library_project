@@ -4,5 +4,6 @@ FactoryBot.define do
     catalog_number
     genre
     summary
+    association :author
   end
 end
