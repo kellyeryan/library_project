@@ -1,24 +1,18 @@
-# README
+# Library App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application to run a basic library system doing things like:
 
-Things you may want to cover:
+  - registering patrons and giving them access to the application
 
-* Ruby version
+  - storing data about books, e.g. their authors, genres, and catalog numbers
 
-* System dependencies
+  - storing data about book loans, e.g. whether a book has been checked out, who has checked it out and from what library
 
-* Configuration
+## Installing the App:
 
-* Database creation
+1. Clone the repo
 
-* Database initialization
+2. Run `bundle install` to make sure that you have all the right libraries in your gemfile
 
-* How to run the test suite
+3. Run the rails server by typing `rails -s` in your console and navigating to `localhost:3000` in your browser
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

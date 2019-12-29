@@ -31,12 +31,13 @@ BookLoans checked_out true scope
 
 - [x] Includes signup, login and logout functionality (e.g. Devise)
 
-
 - [x] Includes nested resource show or index (e.g. users/2/recipes)
 
+books are nested in libraries
 
 - [x] Includes nested resource form (recipes/1/ingredients/new)
 
+Form to donate (i.e. create) a new book is nested in libraries/library_id/books/new
 
 - [X] Includes form display of validation errors
 
@@ -44,9 +45,11 @@ If patron sign-up doesn't meet requirements, it will trigger validation errors.
 
 - [x] Includes Unit tests for at least 2 of your models
 
-- [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
+unit tests for the validations on author, patron, books
 
-- [ ] Includes a `README.md` with an application description and installation guide
+- [x] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
+
+- [x] Includes a `README.md` with an application description and installation guide
 
 Confirm:
 - [ ] The application is pretty DRY

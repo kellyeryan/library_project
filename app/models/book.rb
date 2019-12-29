@@ -15,7 +15,7 @@ class Book < ApplicationRecord
     book_loans.checked_out?
   end
 
-  def make_catalog_number
+  def self.make_catalog_number
     rand.to_s[2..5] + "." + rand.to_s[2..3]
   end
 end

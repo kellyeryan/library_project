@@ -13,14 +13,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
-    author = Author.find_or_create_by(
-      last_name: @book.author.last_name,
-      first_name: @book.author.first_name
-    )
-    if @book.update(author: author,
-                    library: library,
-                    catalog_number: @book.make_catalog_number)
+    author = Author.find_or_create_by(author_attributes)
+    if Book.create(title: book_params[:title],
+                   author: author,
+                   library: library,
+                   catalog_number: Book.make_catalog_number)
       redirect_to library_books_path
     else
       render :new
@@ -39,6 +36,13 @@ private
       :title,
       author_attributes: %i[first_name last_name]
     )
+  end
+
+  def author_attributes
+    {
+      first_name: book_params[:author_attributes][:first_name],
+      last_name: book_params[:author_attributes][:last_name],
+    }
   end
 
   def library
