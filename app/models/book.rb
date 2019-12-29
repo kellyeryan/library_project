@@ -18,8 +18,8 @@ class Book < ApplicationRecord
     rand.to_s[2..5] + "." + rand.to_s[2..3]
   end
 
-  def choose_genre
-    genres = ["sci-fi", "fantasy", "historical fiction", "biography", "poetry", "mystery", "classic", "horror", "romance", "short story", "non-fiction"]
-    genres.all.sample
-  end
+  # def choose_genre
+  #   genres = ["sci-fi", "fantasy", "historical fiction", "biography", "poetry", "mystery", "classic", "horror", "romance", "short story", "non-fiction"]
+  #   genres.all.sample
+  # end
 end

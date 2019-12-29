@@ -6,7 +6,16 @@ RSpec.describe Patron do
   end
 end
 
-# it "has many books" do
-#     book = Book.create(title: "The Kitchen of Hell", auth)
-#     expect(patron.books.first).to eq(book)
-#   end
+RSpec.describe Patron, type: :model do
+  it "is valid" do
+    expect(build(:author)).to be_valid
+  end
+
+  it "is invalid with no first name" do
+    expect(build(:patron, first_name: nil)).to be_invalid
+  end
+
+  it "is invalid with no last name" do
+    expect(build(:patron, last_name: nil)).to be_invalid
+  end
+end
