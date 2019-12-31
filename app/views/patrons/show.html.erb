@@ -33,18 +33,12 @@
 </table>
 
 <p>
-  To get started checking out a book, first choose the library closest to you:
-<ol>
-  <% Library.all.each do |library| %>
-    <li>
-      <%= link_to library.name, library_path(library) %><br>
-      <%= library.street_address %><br>
-      <%= library.city %>,
-      <%= library.state %><br>
-      <br>
-    </li>
-  <% end %>
-</ol>
+  To get started checking out a book, first choose the library closest to you:<br><br>
+  <b> NorthEastern Narnia <b><br>
+    <% @ne_library_regions.each do |library| %>
+      <br><%= link_to library.name, library_path(library) %><br>
+    <% end %>
+</p>
 
 
 <%= link_to "Logout", logout_path %>

@@ -3,15 +3,13 @@
     <th>Title</th>
     <th>Author</th>
     <th>Genre</th>
-    <th>Summary</th>
     <th>Libraries</th>
     <th>Check Out</th>
   </tr>
   <tr>
     <th><%= @book.title %></th>
     <th><%= @book.author.author_name%></th>
-    <th><%= @book.genre%></th>
-    <th><%= @book.summary %></th>
+    <th><%= @book.genre.name %></th>
     <th><%= @libraries.name %></th>
     <th>
     <% if !@book.checked_out? %>

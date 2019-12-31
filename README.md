@@ -4,7 +4,7 @@ This is an application to run a basic library system doing things like:
 
   - registering patrons and giving them access to the application
 
-  - storing data about books, e.g. their authors, genres, and catalog numbers
+  - storing data about books, e.g. their authors, and catalog numbers
 
   - storing data about book loans, e.g. whether a book has been checked out, who has checked it out and from what library
 

@@ -5,6 +5,7 @@ class Book < ApplicationRecord
   belongs_to :author
   has_many :book_loans
   has_many :patrons, through: :book_loans
+  belongs_to :genre
 
   accepts_nested_attributes_for :author
 

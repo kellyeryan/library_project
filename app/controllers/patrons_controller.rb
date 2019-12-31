@@ -4,6 +4,10 @@ class PatronsController < ApplicationController
   def show
     @patron = Patron.find(params[:id])
     @book_loans = BookLoan.checked_out.where(patron: @patron)
+    @ne_library_regions = Library.north_east
+    @se_library_regions = Library.north_west
+    @nw_library_regions = Library.south_east
+    @sw_library_regions = Library.south_west
   end
 
   def new

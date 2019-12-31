@@ -7,10 +7,11 @@
 #
 30.times do
   Library.create(
-    name: Faker::Address.community,
+    name: Faker::Address.unique.community,
     street_address: Faker::Address.street_address,
     city: Faker::Address.city,
-    state: "PA"
+    state: "Narnia",
+    region: Faker::Compass.ordinal_abbreviation
   )
 end
 
@@ -30,12 +31,17 @@ end
   )
 end
 
+15.times do
+  Genre.create(
+    name: Faker::Book.unique.genre
+  )
+end
+
 215.times do
   Book.create(
     title: Faker::Book.title,
     catalog_number: Faker::Number.decimal(l_digits: 2, r_digits: 4),
-    genre: Faker::Book.genre,
-    summary: Faker::Lorem.paragraph(sentence_count: 2),
+    genre: Genre.all.sample,
     library: Library.all.sample,
     author: Author.all.sample
   )

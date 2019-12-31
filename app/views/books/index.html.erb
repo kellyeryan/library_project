@@ -2,6 +2,7 @@
   <tr>
     <th>Title</th>
     <th>Author</th>
+    <th>Genre</th>
     <th>Book Status</th>
     <th>Check Out</th>
   </tr>
@@ -11,6 +12,7 @@
         <%= link_to book.title, library_book_path(@library, book) %>
       </td>
       <td><%= book.author.author_name %></td>
+      <td><%= book.genre.name %></td>
       <td>
         <% if book.checked_out? %>
           <%= "Book already checked out!" %>

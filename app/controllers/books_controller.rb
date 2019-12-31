@@ -13,11 +13,11 @@ class BooksController < ApplicationController
   end
 
   def create
+    @book = Book.new(book_params)
     author = Author.find_or_create_by(author_attributes)
-    if Book.create(title: book_params[:title],
-                   author: author,
-                   library: library,
-                   catalog_number: Book.make_catalog_number)
+    if @book.update(author: author,
+                    library: library,
+                    catalog_number: Book.make_catalog_number)
       redirect_to library_books_path
     else
       render :new
@@ -33,7 +33,7 @@ private
 
   def book_params
     params.require(:book).permit(
-      :title,
+      :title, :genre_id,
       author_attributes: %i[first_name last_name]
     )
   end
