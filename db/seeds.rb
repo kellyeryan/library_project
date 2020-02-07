@@ -5,7 +5,7 @@
 # The data can then be loaded with the rails db:seed command
 # (or created alongside the database with db:setup).
 #
-30.times do
+6.times do
   Library.create(
     name: Faker::Address.unique.community,
     street_address: Faker::Address.street_address,

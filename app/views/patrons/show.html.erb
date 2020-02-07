@@ -5,7 +5,9 @@
 <p>Hello, <%= @patron.name %>!</p>
 
 <p>
-  Here's your library card number:<h4><b><%= @patron.library_card_number %></b></h4> You'll need your library card number to login the next time you want to see your account!
+  Here's your library card number:
+
+  <h4><b><p style="color:Blue;"><%= @patron.library_card_number %></p></b></h4> You'll need your library card number to login the next time you want to see your account!
 </p>
 
 <p>
@@ -34,11 +36,27 @@
 
 <p>
   To get started checking out a book, first choose the library closest to you:<br><br>
-  <b> NorthEastern Narnia <b><br>
+  <b> Northeastern Narnia </b><br>
     <% @ne_library_regions.each do |library| %>
+      <br><%= link_to library.name, library_path(library) %><br>
+    <% end %>
+</p>
+<p>
+  <b> Southeastern Narnia </b><br>
+    <% @se_library_regions.each do |library| %>
+      <br><%= link_to library.name, library_path(library) %><br>
+    <% end %>
+</p>
+<p>
+  <b> Northwestern Narnia </b><br>
+    <% @nw_library_regions.each do |library| %>
+      <br><%= link_to library.name, library_path(library) %><br>
+    <% end %>
+</p>
+  <b> Southwestern Narnia </b><br>
+    <% @sw_library_regions.each do |library| %>
       <br><%= link_to library.name, library_path(library) %><br>
     <% end %>
 </p>
 
 
-<%= link_to "Logout", logout_path %>
