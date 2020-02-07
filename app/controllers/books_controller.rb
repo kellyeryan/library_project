@@ -18,7 +18,7 @@ class BooksController < ApplicationController
     if @book.update(author: author,
                     library: library,
                     catalog_number: Book.make_catalog_number)
-      redirect_to library_books_path
+      render json: @book, status: 201
     else
       render :new
     end
