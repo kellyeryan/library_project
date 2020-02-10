@@ -29,32 +29,27 @@
   <%= f.submit %>
 <% end %><br>
 
-<div id="postResult">
-<h2 id="donationMessage"></h2>
-<h3 id="bookTitle"></h3>
-<h3 id="bookAuthorName"></h3>
-<h3 id="genreName"></h3>
-<h4 id="catalogLink"></h4>
-</div>
+
 
 <script type="text/javascript">
+$(function(){
+ $("form").submit(function(event) {
+    event.preventDefault();
 
-  $(function(){
-   $("form").submit(function(event) {
-      event.preventDefault();
+    let values = $(this).serialize();
 
-      let values = $(this).serialize();
+    var creation = $.post("/libraries/<%= @library.id %>/books", values);
 
-      var creation = $.post("/libraries/<%= @library.id %>/books", values);
+    creation.done(function(data){
+      console.log(data)
+      const book = new Book(data)
+      $("#postResult").append(bookEl());
+      // $("#donationMessage").text("Thank you for your donation. You have donated: ")
+      // $("#bookTitle").text(`Book Title: ${book["title"]}`);
+      // $("#bookAuthorName").text("Author Name:" + " " + book["author"]["first_name"] + " " + book["author"]["last_name"])
+      // $("#genreName").text("Genre:" + " " + book["genre"]["name"])
 
-      creation.done(function(data){
-        console.log(data)
-        let book = data;
-        $("#donationMessage").text("Thank you for your donation. You have donated: ")
-        $("#bookTitle").text("Book Title:" + " " + book["title"]);
-        $("#bookAuthorName").text("Author Name:" + " " + book["author"]["first_name"] + " " + book["author"]["last_name"])
-        $("#genreName").text("Genre:" + " " + book["genre"]["name"])
-        // $("#catalogLink").text("Return to "  + <%= link_to "catalog", library_books_path %>)
+      // $("#catalogLink").text("Return to " + "<%= link_to 'Catalog' %>")
     });
   });
 })
