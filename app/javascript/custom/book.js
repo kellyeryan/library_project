@@ -1,9 +1,11 @@
 'use strict';
 
 class Book {
-  constructor(title, id) {
+  constructor(title, author, genre) {
     this.id = id
     this.title = title
+    this.genre = genre
+    this.author = author
   }
 
   bookEl() {

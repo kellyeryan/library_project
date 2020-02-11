@@ -13,7 +13,7 @@ $(function(){
       console.log(info)
       const bookObject = new Book(info)
       console.log(bookObject)
-      // $("#postResult").append(book.bookEl());
+      // $("#postResults").append(book.bookEl());
 
     });
   });
