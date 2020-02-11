@@ -1,5 +1,7 @@
 <h2>Donate a Book!</h2>
 
+<div class="book_donation">
+
 <%= form_with(model: [@library, @book]) do |f| %>
 
   <% if @book.errors.any? %>
@@ -8,6 +10,7 @@
       <% end %>
   <% end %>
   <% else %>
+
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -26,34 +29,16 @@
     <%= f.label :genre %>
     <%= f.collection_select :genre_id, Genre.all, :id, :name %>
     </p>
+    <%= hidden_field_tag(:library_id, @library.id) %>
+  <p>
   <%= f.submit %>
+  </p>
 <% end %><br>
+</div>
 
+<div class="postResults">
+</div>
 
-
-<script type="text/javascript">
-$(function(){
- $("form").submit(function(event) {
-    event.preventDefault();
-
-    let values = $(this).serialize();
-
-    var creation = $.post("/libraries/<%= @library.id %>/books", values);
-
-    creation.done(function(data){
-      console.log(data)
-      const book = new Book(data)
-      $("#postResult").append(bookEl());
-      // $("#donationMessage").text("Thank you for your donation. You have donated: ")
-      // $("#bookTitle").text(`Book Title: ${book["title"]}`);
-      // $("#bookAuthorName").text("Author Name:" + " " + book["author"]["first_name"] + " " + book["author"]["last_name"])
-      // $("#genreName").text("Genre:" + " " + book["genre"]["name"])
-
-      // $("#catalogLink").text("Return to " + "<%= link_to 'Catalog' %>")
-    });
-  });
-})
-</script>
 
 <!-- 3. Must intercept a form to create a resource and render the response without a page refresh. For example, a user might be able to add a comment to a post, and submit it via an AJAX POST request, with the response being the new object in JSON. The new record would then be formatted with OO JS and appended to the DOM.
  -->
