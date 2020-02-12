@@ -6,9 +6,9 @@
 <h4>Feeling generous? <%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h4>
 </p>
 
-<div class="js-browse">
-<h4><%= link_to "Browse", library_books_path(@library.id) %> the library catalog.</h4>
-</div>
+<p>
+<h4><a href="/libraries/<%= @library.id %>/books" class="js-browse"> Browse</a> the library catalog.</h4>
+</p>
 
 <div class="js-catalog">
 </div>

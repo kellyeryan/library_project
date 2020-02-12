@@ -7,6 +7,10 @@ class LibrariesController < ApplicationController
 
   def show
     @library = Library.find(params[:id])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @library.to_json }
+    end
   end
 
 private
