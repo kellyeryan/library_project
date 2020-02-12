@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 
-
+require("packs/custom")
 require("custom/book_listener")
 require("custom/book")
 require("custom/library_catalog_listener")

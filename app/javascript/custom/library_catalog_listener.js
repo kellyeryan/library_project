@@ -6,6 +6,6 @@ $(function(){
     console.log(catalogURL)
     $.get(`${catalogURL}`, (function(data){
       $(".js-catalog").append($(data))
-      }))
+    }))
   })
 })
