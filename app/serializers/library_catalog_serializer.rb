@@ -1,1 +1,0 @@
-library_catalog_serializer.rb
