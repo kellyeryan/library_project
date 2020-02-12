@@ -1,28 +1,15 @@
-'use strict';
-
-class Book {
+let Book = class {
   constructor(title, author, genre) {
     this.id = id
     this.title = title
     this.genre = genre
     this.author = author
-  }
+    }
 
   bookEl() {
     console.log(this)
-    return
-      `<div id="postResult">
-        <li="book-${this.id}" data-id="${this.id}>">
+      return `<li="book-${this.id}" data-id="${this.id}>">
           <h2 align="center"> Title: ${this.title} </h2>
-        </li>
-      </div>`
+              </li>`;
     }
   }
-
-//   <div id="postResult">
-// <h2 id="donationMessage"></h2>
-// <h3 id="bookTitle"></h3>
-// <h3 id="bookAuthorName"></h3>
-// <h3 id="genreName"></h3>
-// <h4 id="catalogLink"></h4>
-// </div>

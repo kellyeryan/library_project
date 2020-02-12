@@ -1,6 +1,6 @@
 $(function(){
   let $info = $(".book_donation")
- $info.on("submit", function(event) {
+  $info.on("submit", function(event) {
     event.preventDefault();
     let data = event.target.elements
     let library_id = data[5]
@@ -11,11 +11,12 @@ $(function(){
 
     creation.done(function(info){
       console.log(info)
-      const bookObject = new Book(info)
+      let bookObject = new Book(info.title)
       console.log(bookObject)
-      // $("#postResults").append(book.bookEl());
 
+      $(".postResults").append(bookObject.bookEl());
     });
   });
 })
+
 
