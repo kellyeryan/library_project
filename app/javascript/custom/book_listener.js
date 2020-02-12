@@ -11,10 +11,8 @@ $(function(){
 
     creation.done(function(info){
       console.log(info)
-      let bookObject = new Book(info.title)
-      console.log(bookObject)
 
-      $(".postResults").append(bookObject.bookEl());
+      // $(".postResults").append(bookEl());
     });
   });
 })

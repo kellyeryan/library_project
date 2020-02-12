@@ -1,4 +1,4 @@
-let Book = class {
+class Book {
   constructor(title, author, genre) {
     this.id = id
     this.title = title
