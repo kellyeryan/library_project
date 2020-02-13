@@ -4,8 +4,9 @@ $(function(){
     console.log(event)
     let catalogURL = event.target.href
     console.log(catalogURL)
-    $.get(`${catalogURL}`, (function(data){
+    $.getJSON(`${catalogURL}`, function(data){
+      console.log(data)
       $(".js-catalog").append($(data))
-    }))
+    })
   })
 })

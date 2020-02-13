@@ -5,6 +5,10 @@ class BooksController < ApplicationController
 
   def index
     @books = @library.books
+    # respond_to do |format|
+    #   format.html { render :show }
+    #   format.json { render json: @books.to_json }
+    # end
   end
 
   def new

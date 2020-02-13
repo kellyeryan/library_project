@@ -12,13 +12,13 @@
     <th><%= @book.genre.name %></th>
     <th><%= @libraries.name %></th>
     <th>
-    <% if !@book.checked_out? %>
-          <%= form_with(model: @book.book_loans.build) do |f| %>
-            <input type="hidden" name="book_id" value="<%= @book.id %>" />
-            <%= f.submit "Check out this book" %>
-          <% end %>
-        </th>
+      <% if !@book.checked_out? %>
+        <%= form_with(model: @book.book_loans.build) do |f| %>
+          <input type="hidden" name="book_id" value="<%= @book.id %>" />
+           <%= f.submit "Check out this book" %>
+        <% end %>
       <% end %>
+    </th>
   </tr>
 </table>
 

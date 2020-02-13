@@ -1,3 +1,37 @@
+class Book {
+  constructor(title, last_name, first_name, genre) {
+    // this.id = id
+    this.title = title
+    this.last_name = last_name
+    this.first_name = first_name
+    this.genre = genre
+  }
+
+
+  // where to put? id="book-${this.id}" data-id="${this.id}"
+
+  bookEl() {
+    console.log(this)
+    return `
+      <h3 align="left">Thank you for your donation!</h3>
+      <h3 align="left">Books Donated:</h3>
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>
+        </tr>
+        <tr>
+          <th>${this.title}</th>
+          <th>${this.first_name} ${this.last_name}</th>
+          <th>${this.genre}</th>
+        </tr>
+      </table>
+    `
+  }
+}
+
 $(function(){
   let $info = $(".book_donation")
   $info.on("submit", function(event) {
@@ -5,14 +39,13 @@ $(function(){
     let data = event.target.elements
     let library_id = data[5]
     let values = $(data).serialize();
+
     console.log(values)
 
-    var creation = $.post(`/libraries/${library_id.value}/books`, values);
-
-    creation.done(function(info){
-      console.log(info)
-
-      // $(".postResults").append(bookEl());
+    $.post(`/libraries/${library_id.value}/books`, values).done(function(info) {
+      let book = new Book(info.title, info.author["last_name"], info.author["first_name"], info.genre["name"])
+      $(".postResults").append(book.bookEl());
+      $("input").val("")
     });
   });
 })
