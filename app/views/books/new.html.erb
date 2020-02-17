@@ -2,7 +2,7 @@
 
 <div class="book_donation">
 
-<%= form_with(model: [@library, @book]) do |f| %>
+<%= form_with(model: [@library, @book], data: { turbolinks: false }) do |f| %>
 
   <% if @book.errors.any? %>
       <% @book.errors.full_messages.each do |msg| %>
