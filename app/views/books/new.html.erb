@@ -1,5 +1,7 @@
 <h2>Donate a Book!</h2>
 
+<div class="book_donation">
+
 <%= form_with(model: [@library, @book]) do |f| %>
 
   <% if @book.errors.any? %>
@@ -26,6 +28,8 @@
     <%= f.label :genre %>
     <%= f.collection_select :genre_id, Genre.all, :id, :name %>
     </p>
+    <%= hidden_field_tag(:library_id, @library.id) %>
   <%= f.submit %>
 <% end %>
+</div>
 
