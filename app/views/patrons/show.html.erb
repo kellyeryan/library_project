@@ -34,13 +34,28 @@
 
 <p>
   To get started checking out a book, first choose the library closest to you:<br><br>
-  <b> NorthEastern Narnia <b><br>
+  <b> NorthEastern Narnia </b><br>
     <% @ne_library_regions.each do |library| %>
       <br><%= link_to library.name, library_path(library) %><br>
     <% end %>
 </p>
-
-
+<p>
+  <b> Southeastern Narnia </b><br>
+    <% @se_library_regions.each do |library| %>
+      <br><%= link_to library.name, library_path(library) %><br>
+    <% end %>
+</p>
+<p>
+  <b> Northwestern Narnia </b><br>
+    <% @nw_library_regions.each do |library| %>
+      <br><%= link_to library.name, library_path(library) %><br>
+    <% end %>
+</p>
+  <b> Southwestern Narnia </b><br>
+    <% @sw_library_regions.each do |library| %>
+      <br><%= link_to library.name, library_path(library) %><br>
+    <% end %>
+</p>
 
 
 <%= link_to "Logout", logout_path %>
