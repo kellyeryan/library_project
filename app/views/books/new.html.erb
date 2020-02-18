@@ -29,6 +29,7 @@
     <%= f.collection_select :genre_id, Genre.all, :id, :name %>
     </p>
     <%= hidden_field_tag(:library_id, @library.id) %>
+    <%= hidden_field_tag(:patron_id, session[:patron_id]) %>
   <%= f.submit %>
 <% end %>
 </div>

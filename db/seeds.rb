@@ -5,7 +5,7 @@
 # The data can then be loaded with the rails db:seed command
 # (or created alongside the database with db:setup).
 #
-30.times do
+10.times do
   Library.create(
     name: Faker::Address.unique.community,
     street_address: Faker::Address.street_address,
@@ -15,7 +15,7 @@
   )
 end
 
-101.times do
+110.times do
   Patron.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,

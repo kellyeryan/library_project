@@ -3,6 +3,7 @@
     <th>Title</th>
     <th>Author</th>
     <th>Genre</th>
+    <th>Library</th>
     <th>Book Status</th>
     <th>Check Out</th>
   </tr>
@@ -13,6 +14,7 @@
       </td>
       <td><%= book.author.author_name %></td>
       <td><%= book.genre.name %></td>
+      <td><%= book.library.name %></td>
       <td>
         <% if book.checked_out? %>
           <%= "Book already checked out!" %>
