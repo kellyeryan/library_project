@@ -8,45 +8,46 @@ class Book {
     this.library = library
   }
 
-  bookCatalogEl() {
-    return `
-      <table>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Genre</th>
-          <th>Library</th>
-          <th>Book Status</th>
-          <th>Check Out</th>
-        </tr>
-        <% @books.each do |book| %>
-        <tr>
-          <td>
-            <%= link_to book.title, library_book_path(@library, book) %>
-          </td>
-          <td><%= book.author.author_name %></td>
-          <td><%= book.genre.name %></td>
-          <td><%= book.library.name %></td>
-        <td>
-          <% if book.checked_out? %>
-            <%= "Book already checked out!" %>
-          <% else %>
-            <%= "Available" %>
-          <% end %>
-        </td>
-        <td>
-          <% if !book.checked_out? %>
-            <%= form_with(model: book.book_loans.build) do |f| %>
-              <input type="hidden" name="book_id" value="<%= book.id %>" />
-              <%= f.submit "Check out this book" %>
-            <% end %>
-          <% end %>
-        </td>
-        <% end %>
-      </tr>
-    </table>
-    `
-  }
+  // bookCatalogEl() {
+  //  console.log(this)
+  //   return `
+  //     <table>
+  //       <tr>
+  //         <th>Title</th>
+  //         <th>Author</th>
+  //         <th>Genre</th>
+  //         <th>Library</th>
+  //         <th>Book Status</th>
+  //         <th>Check Out</th>
+  //       </tr>
+  //       <% @books.each do |book| %>
+  //       <tr>
+  //         <td>
+  //           <%= ${book.title} %>
+  //         </td>
+  //         <td><%= ${book.last_name}, ${book.first_name} %></td>
+  //         <td><%= ${this.genre} %></td>
+  //         <td><%= ${this.library} %></td>
+  //       <td>
+  //         <% if this.checked_out? %>
+  //           <%= "Book already checked out!" %>
+  //         <% else %>
+  //           <%= "Available" %>
+  //         <% end %>
+  //       </td>
+  //       <td>
+  //         <% if !this.checked_out? %>
+  //           <%= form_with(model: this.book_loans.build) do |f| %>
+  //             <input type="hidden" name="book_id" value="<%= this.id %>" />
+  //             <%= f.submit "Check out this book" %>
+  //           <% end %>
+  //         <% end %>
+  //       </td>
+  //       <% end %>
+  //     </tr>
+  //   </table>
+  //   `
+  // }
 }
 
 $(function(){
