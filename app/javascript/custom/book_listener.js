@@ -23,7 +23,7 @@ class Book {
         <tr>
           <th>${this.title}</th>
           <th>${this.first_name} ${this.last_name}</th>
-          <th>${this.genre.name}</th>
+          <th>${this.genre}</th>
           <th>${this.library}</th>
         </tr>
       </table>

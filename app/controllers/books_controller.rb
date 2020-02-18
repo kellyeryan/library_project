@@ -6,7 +6,9 @@ class BooksController < ApplicationController
   def index
     @books = @library.books
     respond_to do |format|
-      format.json { render json: @books.to_json, serializer: BookSerializer}
+      format.html { render :index }
+      format.json { render json: @books.to_json(include: [ :library, :genre, :author ]
+                                 ) }
     end
   end
 
