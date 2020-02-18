@@ -23,7 +23,7 @@ class Book {
         <tr>
           <th>${this.title}</th>
           <th>${this.first_name} ${this.last_name}</th>
-          <th>${this.genre}</th>
+          <th>${this.genre.name}</th>
           <th>${this.library}</th>
         </tr>
       </table>
@@ -40,7 +40,6 @@ $(document).ready(function() {
 
     $.post(`/libraries/${library_id}/books.json`, values).done(function(info) {
       let book = new Book(info.title, info.author["last_name"], info.author["first_name"], info.genre["name"], info.library["name"])
-      console.log("In the promise")
 
       $(".postResults").append(book.bookEl());
       $("input:text").val("")

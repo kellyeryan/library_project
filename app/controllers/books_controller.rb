@@ -5,6 +5,9 @@ class BooksController < ApplicationController
 
   def index
     @books = @library.books
+    respond_to do |format|
+      format.json { render json: @books.to_json, serializer: BookSerializer}
+    end
   end
 
   def new
