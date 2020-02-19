@@ -24,26 +24,13 @@ static libraryTable(groupOfBooks) {
 
     groupOfBooks.forEach(function(currentBook) {
       const book = new Book(currentBook.title, currentBook.author.first_name, currentBook.author.last_name, currentBook.genre.name, currentBook.library.name)
-        template += book.bookCatalogEl()
+        template += book.bookEl()
     })
     template += "</table>"
    $(".js-catalog").append(template)
 }
 
-  bookCatalogEl() {
-   console.log(this)
-    return `
-          <tr>
-            <td> ${this.title} </td>
-            <td> ${this.last_name}, ${this.first_name} </td>
-            <td> ${this.genre} </td>
-            <td> ${this.library} </td>
-        </tr>
-    `
-  }
-
     bookEl() {
-    console.log(this)
     return `
           <tr>
             <td> ${this.title} </td>
