@@ -20,10 +20,10 @@ class Book {
           <th>Library</th>
         </tr>
         <tr>
-          <th> ${this.title} </th>
-          <th> ${this.last_name}, ${this.first_name} </th>
-          <th> ${this.genre} </th>
-          <th> ${this.library} </th>
+          <td> ${this.title} </td>
+          <td> ${this.last_name}, ${this.first_name} </td>
+          <td> ${this.genre} </td>
+          <td> ${this.library} </td>
       </tr>
     </table>
     `

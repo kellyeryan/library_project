@@ -20,14 +20,20 @@ class Book {
           <th>Genre</th>
           <th>Library</th>
         </tr>
-        <tr>
-          <th>${this.title}</th>
-          <th>${this.first_name} ${this.last_name}</th>
-          <th>${this.genre}</th>
-          <th>${this.library}</th>
-        </tr>
+        ${this.tableRow()}
       </table>
     `
+
+    tableRow() {
+      return `
+        <tr>
+          <td>${this.title}</td>
+          <td>${this.first_name} ${this.last_name}</td>
+          <td>${this.genre}</td>
+          <td>${this.library}</td>
+        </tr>
+      `
+    }
   }
 }
 
