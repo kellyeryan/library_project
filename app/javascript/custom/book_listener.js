@@ -1,20 +1,14 @@
-const TABLE_HEADER = `<table>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Genre</th>
-          <th>Library</th>
-        </tr>
-        `
-const TABLE_BODY =
-    `
+let template = `
+  <table id="bookTable">
+      <thead>
           <tr>
-            <td> ${this.title} </td>
-            <td> ${this.last_name}, ${this.first_name} </td>
-            <td> ${this.genre} </td>
-            <td> ${this.library} </td>
-        </tr>
-    `
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Library</th>
+          </tr>
+        </thead>
+      `
 
 class Book {
   constructor(title, first_name, last_name, genre, library) {
@@ -28,17 +22,6 @@ class Book {
 
 static libraryTable(groupOfBooks) {
 
-  let template = `
-  <table id="bookTable">
-      <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Library</th>
-          </tr>
-        </thead>
-      `
     groupOfBooks.forEach(function(currentBook) {
       const book = new Book(currentBook.title, currentBook.author.first_name, currentBook.author.last_name, currentBook.genre.name, currentBook.library.name)
         template += book.bookCatalogEl()
@@ -62,22 +45,12 @@ static libraryTable(groupOfBooks) {
     bookEl() {
     console.log(this)
     return `
-      <h3 align="left">Thank you for your donation!</h3>
-      <h3 align="left">Books Donated:</h3>
-      <table>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Genre</th>
-          <th>Library</th>
+          <tr>
+            <td> ${this.title} </td>
+            <td> ${this.last_name}, ${this.first_name} </td>
+            <td> ${this.genre} </td>
+            <td> ${this.library} </td>
         </tr>
-        <tr>
-          <td>${this.title}</td>
-          <td>${this.first_name} ${this.last_name}</td>
-          <td>${this.genre}</td>
-          <td>${this.library}</td>
-        </tr>
-      </table>
     `
   }
 }
@@ -92,8 +65,10 @@ $(document).ready(function() {
     $.post(`/libraries/${library_id}/books.json`, values).done(function(info) {
       let book = new Book(info.title, info.author["last_name"], info.author["first_name"], info.genre["name"], info.library["name"])
 
-      $(".postResults").append(book.bookEl());
-      $("input:text").val("")
+      template += book.bookEl()
+      template += "</table>"
+      $(".postResults").append(template)
+      $("input").val("")
     });
   });
 })
