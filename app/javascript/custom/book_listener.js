@@ -13,8 +13,8 @@ let template = `
       `
 
 class Book {
-  constructor(title, first_name, last_name, genre, library, bookStatus) {
-    // this.id = id
+  constructor(title, first_name, last_name, genre, library, bookStatus, id) {
+    this.id = id
     this.title = title
     this.first_name = first_name
     this.last_name = last_name
@@ -25,6 +25,8 @@ class Book {
 
 static libraryTable(groupOfBooks) {
     groupOfBooks.forEach(function(currentBook) {
+
+      console.log(currentBook)
 
         if (currentBook.book_loans.length === 0) {
           currentStatus = "Available"
@@ -39,7 +41,8 @@ static libraryTable(groupOfBooks) {
                             currentBook.author.last_name,
                             currentBook.genre.name,
                             currentBook.library.name,
-                            currentStatus)
+                            currentStatus,
+                            currentBook.id)
 
         template += book.bookEl()
     })
@@ -57,7 +60,7 @@ static libraryTable(groupOfBooks) {
             <td> ${this.genre} </td>
             <td> ${this.library} </td>
             <td> ${this.bookStatus} </td>
-            <td> <button type="submit" class="checkOutButton" value="${this.id}">Check out this book</button> </td>
+            <td> <button type="submit" class="checkOutButton" id="book-${this.id}" data-id="${this.id}">Check out this book</button> </td>
         </tr>
     `
   }
@@ -88,8 +91,8 @@ $(function(){
   $(".js-browse").on("click", function(event){
     event.preventDefault();
     let catalogURL = event.target.href
-    $.getJSON(`${catalogURL}`, function(info){
-      Book.libraryTable(info)
+    $.getJSON(`${catalogURL}`, function(groupOfBooks){
+      Book.libraryTable(groupOfBooks)
     })
   })
 })
@@ -98,7 +101,18 @@ $(document).ready(function(){
   $(".js-catalog").on("click", ".checkOutButton", function(event){
     event.preventDefault();
     console.log(event)
-    console.log(this)
+    let checkedOut = event.target.id
+    let bookId = event.target.dataset.id
+    let baseURL = event.target.baseURI
+    console.log(bookId)
+    console.log(baseURL)
+    console.log(`${baseURL}/books/${bookId}`)
+    if (checkedOut === "Available") {
+      window.location.href = `${baseURL}/books/${bookId}`
+
+    } else {
+      $(".checkOutButton").text("Not Available")
+    }
 
   })
 })
