@@ -30,6 +30,7 @@
     </p>
     <%= hidden_field_tag(:library_id, @library.id) %>
     <%= hidden_field_tag(:patron_id, session[:patron_id]) %>
+    <%= hidden_field_tag(:book_loans, @book.book_loans) %>
   <%= f.submit %>
 <% end %>
 </div>
