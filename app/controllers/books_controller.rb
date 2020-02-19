@@ -7,8 +7,7 @@ class BooksController < ApplicationController
     @books = @library.books
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @books.to_json(include: [ :library, :genre, :author ]
-                                 ) }
+      format.json { render json: @books.to_json(include: [ :library, :genre, :author, :book_loans ]) }
     end
   end
 
