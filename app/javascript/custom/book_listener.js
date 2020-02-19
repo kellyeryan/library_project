@@ -7,6 +7,7 @@ let template = `
             <th>Genre</th>
             <th>Library</th>
             <th>Book Status</th>
+            <th>Check Out</th>
           </tr>
         </thead>
       `
@@ -56,10 +57,12 @@ static libraryTable(groupOfBooks) {
             <td> ${this.genre} </td>
             <td> ${this.library} </td>
             <td> ${this.bookStatus} </td>
+            <td> <button type="submit" class="checkOutButton" value="${this.id}">Check out this book</button> </td>
         </tr>
     `
   }
 }
+
 
 $(document).ready(function() {
   $(".book_donation").submit(function(event) {
@@ -88,5 +91,14 @@ $(function(){
     $.getJSON(`${catalogURL}`, function(info){
       Book.libraryTable(info)
     })
+  })
+})
+
+$(document).ready(function(){
+  $(".js-catalog").on("click", ".checkOutButton", function(event){
+    event.preventDefault();
+    console.log(event)
+    console.log(this)
+
   })
 })
