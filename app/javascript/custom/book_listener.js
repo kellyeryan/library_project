@@ -85,12 +85,21 @@ $(document).ready(function() {
     });
   });
 
+
   $(".js-browse").on("click", function(event){
     event.preventDefault();
     let catalogURL = event.target.href
     $.getJSON(`${catalogURL}`, function(groupOfBooks){
       $(".js-catalog").append(Book.libraryTableEl(groupOfBooks))
     })
+  })
+})
+
+$(document).ready(function() {
+  $("#book-details").on("submit", function(event) {
+    event.preventDefault();
+    console.log(event)
+    console.log(this)
   })
 })
 

@@ -43,6 +43,7 @@ end
     catalog_number: Faker::Number.decimal(l_digits: 2, r_digits: 4),
     genre: Genre.all.sample,
     library: Library.all.sample,
-    author: Author.all.sample
+    author: Author.all.sample,
+    description: Faker::Lorem.paragraph
   )
 end
