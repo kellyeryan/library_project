@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class BookLoansController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     @book_loan = BookLoan.create(
       book_id: params[:book_id],

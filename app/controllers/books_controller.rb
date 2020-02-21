@@ -2,6 +2,7 @@
 
 class BooksController < ApplicationController
   before_action :library
+  skip_before_action :verify_authenticity_token
 
   def index
     @books = @library.books

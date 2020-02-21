@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PatronsController < ApplicationController
+
   def show
     @patron = Patron.find(params[:id])
     @book_loans = BookLoan.checked_out.where(patron: @patron)
