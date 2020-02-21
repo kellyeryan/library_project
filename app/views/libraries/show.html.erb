@@ -10,5 +10,11 @@
 <h4>Feeling generous? <%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h4>
 </p>
 
+<div class="nearest-library">
+<p>
+<h4>Want to browse the nearest library's <a href="/libraries/<%= @library.id + 1 %>" class="library-nearby">catalog</a>?</h4>
+</p>
+</div>
+
 <div class="js-catalog"></div>
 

@@ -36,6 +36,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @libraries = Library.find_by(books: @book)
+    render json: @book.to_json(include: [ :library, :genre, :author, :book_loans ])
   end
 
 private

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BookSerializer < ActiveModel::Serializer
-  attributes :id, :library, :title, :author, :genre, :bookStatus
+  attributes :id, :library, :title, :author, :genre, :bookStatus, :book_loans
 
   def bookStatus
     if object.checked_out?

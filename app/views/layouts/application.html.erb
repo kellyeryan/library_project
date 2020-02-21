@@ -13,7 +13,7 @@
         <% if !current_patron %>
           <a class="navbar-brand" href="<%= root_url %>"/>Login or Sign up Page</a>
         <% else %>
-          <a class="navbar-brand" href="<%= patron_path(session[:patron_id]) %>"/>Patron Account</a>
+          <a class="navbar-brand" id="<%= session[:patron_id] %>" href="<%= patron_path(session[:patron_id]) %>"/>Patron Account</a>
           <a class="navbar-brand" href="<%= logout_url %>"/>Logout</a>
         <% end %>
       </div>

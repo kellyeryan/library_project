@@ -6,7 +6,7 @@ class BookLoansController < ApplicationController
       book_id: params[:book_id],
       patron_id: session[:patron_id]
     )
-    redirect_to patron_path(@book_loan.patron)
+      redirect_to("http://localhost:3000#{patron_path(@book_loan.patron)}")
   end
 
   def update
