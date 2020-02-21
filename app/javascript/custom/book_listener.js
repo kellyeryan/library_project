@@ -49,6 +49,7 @@ class Book {
 
   bookEl() {
     return `
+    <tbody>
       <tr>
         <td>${this.title}</td>
         <td>${this.last_name}, ${this.first_name}</td>
@@ -56,12 +57,13 @@ class Book {
         <td>${this.library}</td>
         <td>${this.bookStatus}</td>
         <td>
-          <form action="/book_loans" accept-charset="UTF-8" data-remote="true" method="post">
+          <form action="/book_loans" accept-charset="UTF-8" data-remote="false" method="post">
             <input type="hidden" name="book_id" value="${this.id}">
             <input type="submit" name="commit" value="Check out this book" data-disable-with="Check out this book">
           </form>
         </td>
       </tr>
+    </tbody>
     `
   }
 }
@@ -92,7 +94,3 @@ $(document).ready(function() {
   })
 })
 
-$(".nearest-library").on("click", $("#next-library"), function(event){
-  event.preventDefault();
-  console.log(event)
-})

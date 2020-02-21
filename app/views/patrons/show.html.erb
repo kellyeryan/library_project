@@ -24,7 +24,7 @@
       <td><%= loan.book.author.author_name %></td>
       <td><%= loan.book.library.name %></td>
       <td>
-        <%= form_with url: book_loan_path(loan.id), method: :patch do |f| %>
+        <%= form_with url: book_loan_path(loan.id), method: :patch, local: true do |f| %>
           <%= f.submit "Return this book" %>
         <% end %>
       </td>
