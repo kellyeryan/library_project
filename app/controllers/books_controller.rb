@@ -8,7 +8,11 @@ class BooksController < ApplicationController
     @books = @library.books
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @books.to_json(include: [ :library, :genre, :author, :book_loans ], methods: :description ) }
+      format.json do
+        render json: @books.to_json(
+          include: %i[library genre author book_loans], methods: :description
+        )
+      end
     end
   end
 
@@ -17,13 +21,12 @@ class BooksController < ApplicationController
     @author = @book.build_author
   end
 
-  def create
+  def create # rubocop:disable Metrics/MethodLength
     respond_to do |format|
       format.json do
         @book = Book.new(book_params)
         author = Author.find_or_create_by(author_attributes)
-        if @book.update(author: author,
-                        library: library,
+        if @book.update(author: author, library: library,
                         catalog_number: Book.make_catalog_number)
           render json: @book, status: 201
         else
@@ -39,7 +42,11 @@ class BooksController < ApplicationController
     @libraries = Library.find_by(books: @book)
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @book.to_json(include: [ :library, :genre, :author, :book_loans ], methods: :description) }
+      format.json do
+        render json: @book.to_json(
+          include: %i[library genre author book_loans], methods: :description
+        )
+      end
     end
   end
 
