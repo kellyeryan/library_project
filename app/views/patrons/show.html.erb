@@ -15,6 +15,8 @@
   <tr>
     <th>Book Title</th>
     <th>Book Author</th>
+    <th>Genre</th>
+    <th>Library</th>
     <th>Return Book</th>
     <th>Book Details</th>
   </tr>
@@ -22,14 +24,17 @@
     <tr>
       <td><%= loan.book.title %></td>
       <td><%= loan.book.author.author_name %></td>
+      <td><%= loan.book.genre.name %></td>
+      <td><%= loan.book.library.name %></td>
+
       <td>
         <%= form_with url: book_loan_path(loan.id), method: :patch, local: true do |f| %>
           <%= f.submit "Return this book" %>
         <% end %>
       </td>
       <td>
-        <form action="/libraries/<%= loan.book.library_id %>/books/<%= loan.book.id %>" method="get">
-          <button type="submit" id="book-details">Load more details about the book</button>
+        <form action="/libraries/<%= loan.book.library_id %>/books/<%= loan.book.id %>">
+          <button id="js-book-details" type="submit">Click here for more info about the book.</button>
         </form>
       </td>
     </tr>

@@ -1,7 +1,7 @@
 <body>
 <h1>Sign Up for a Library Account</h1>
 
-<h3><%= form_with scope: :patron, url: patrons_path do |form| %>
+<h3><%= form_with scope: :patron, url: patrons_path, local: true do |form| %>
 
   <% if @patron.errors.any? %>
     <div id="error_explanation">

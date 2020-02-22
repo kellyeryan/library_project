@@ -8,7 +8,7 @@ class BooksController < ApplicationController
     @books = @library.books
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @books.to_json(include: [ :library, :genre, :author, :book_loans, :description ]) }
+      format.json { render json: @books.to_json(include: [ :library, :genre, :author, :book_loans ], methods: :description ) }
     end
   end
 
@@ -37,7 +37,10 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @libraries = Library.find_by(books: @book)
-    render json: @book.to_json(include: [ :library, :genre, :author, :book_loans ])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @book.to_json(include: [ :library, :genre, :author, :book_loans ], methods: :description) }
+    end
   end
 
 private

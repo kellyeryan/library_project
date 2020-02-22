@@ -13,7 +13,7 @@ let template = `
       `
 
 class Book {
-  constructor(title, first_name, last_name, genre, library, bookStatus, id, bookLoans) {
+  constructor(title, first_name, last_name, genre, library, bookStatus, id, bookLoans, description) {
     this.id = id
     this.title = title
     this.first_name = first_name
@@ -22,6 +22,7 @@ class Book {
     this.library = library
     this.bookStatus = bookStatus
     this.bookLoans = bookLoans
+    this.description = description
   }
 
   static libraryTableEl(groupOfBooks) {
@@ -40,7 +41,8 @@ class Book {
                             currentBook.library.name,
                             currentStatus,
                             currentBook.id,
-                            currentBook.book_loans)
+                            currentBook.book_loans,
+                            currentBook.description)
       template += book.bookEl()
     })
     template += "</table>"
@@ -93,13 +95,11 @@ $(document).ready(function() {
       $(".js-catalog").append(Book.libraryTableEl(groupOfBooks))
     })
   })
-})
 
-$(document).ready(function() {
-  $("#book-details").on("submit", function(event) {
+  $("js-book-details").on("submit", (function(event) {
     event.preventDefault();
-    console.log(event)
-    console.log(this)
-  })
+      console.log(event)
+      console.log(this)
+  }))
 })
 
