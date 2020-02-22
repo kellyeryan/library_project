@@ -78,7 +78,7 @@ $(document).ready(function() {
     let values = $(data).serialize();
 
     $.post(`/libraries/${library_id}/books.json`, values).done(function(info) {
-      let book = new Book(info.title, info.author["first_name"], info.author["last_name"], info.genre["name"], info.library["name"], info["bookStatus"])
+      let book = new Book(info.title, info.author["first_name"], info.author["last_name"], info.genre["name"], info.library["name"], info["book_status"])
 
       template += book.bookEl()
       template += "</table>"
@@ -96,10 +96,13 @@ $(document).ready(function() {
     })
   })
 
-  $("js-book-details").on("submit", (function(event) {
+  $(".js-book-details").on("click", (function(event) {
     event.preventDefault();
-      console.log(event)
-      console.log(this)
+      let bookURL = event.currentTarget.action
+      $.getJSON(`${bookURL}`, function(data) {
+        let bookID = data.id
+        $(`#${bookID}`).empty().append(data.description)
+      })
   }))
 })
 

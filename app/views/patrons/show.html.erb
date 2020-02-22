@@ -33,8 +33,8 @@
         <% end %>
       </td>
       <td>
-        <form action="/libraries/<%= loan.book.library_id %>/books/<%= loan.book.id %>">
-          <button id="js-book-details" type="submit">Click here for more info about the book.</button>
+        <form action="/libraries/<%= loan.book.library_id %>/books/<%= loan.book.id %>" class="js-book-details" id="<%= loan.book.id %>" data-id="<%= loan.book.id %>">
+          <button type="submit">Click here for a description of the book</button>
         </form>
       </td>
     </tr>
