@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "POST books#create" do
   it "should create a new book" do
+    binding.pry
     patron = create(:patron)
     login_as(patron, scope: :patron)
     visit new_library_book_path
@@ -12,5 +13,6 @@ describe "POST books#create" do
 
 
     expect { click_button "Submit" }.to change(Book, :count).by(1)
+    expect(page).to have_content("The Empty Room")
   end
 end

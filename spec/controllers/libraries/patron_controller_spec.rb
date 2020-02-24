@@ -1,1 +1,0 @@
-patron_controller_spec.rb
