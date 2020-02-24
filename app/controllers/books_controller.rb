@@ -28,9 +28,9 @@ class BooksController < ApplicationController
         author = Author.find_or_create_by(author_attributes)
         if @book.update(author: author, library: library,
                         catalog_number: Book.make_catalog_number)
-          render json: @book, status: 201
+          render json: @book, status: 201, success: "Book is successfully created."
         else
-          render json: {}, status: 500
+          render json: {}, status: 500, error: "Error while creating new book."
         end
       end
       format.js {}
