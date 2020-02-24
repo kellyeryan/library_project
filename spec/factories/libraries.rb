@@ -5,5 +5,6 @@ FactoryBot.define do
     city { "Ryanview" }
     state { "Narnia" }
     region { "NE" }
+    id { 12 }
   end
 end
