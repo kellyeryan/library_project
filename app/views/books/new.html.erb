@@ -12,16 +12,16 @@
   <% else %>
   <p>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, id: "book_title" %>
   </p>
   <%= f.fields_for :author, @author do |ff| %>
     <p>
       <%= ff.label "Author's first name" %>
-      <%= ff.text_field :first_name %><br>
+      <%= ff.text_field :first_name, id: "author_first_name" %><br>
     </p>
     <p>
       <%= ff.label "Author's last name" %>
-      <%= ff.text_field :last_name %><br>
+      <%= ff.text_field :last_name, id: "author_last_name" %><br>
     </p>
   <% end %>
     <p>

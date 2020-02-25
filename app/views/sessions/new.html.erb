@@ -8,12 +8,12 @@
 <%= form_with scope: :patron do |form| %>
   <p>
     <%= form.label :library_card_number %>
-    <%= form.text_field :library_card_number %>
+    <%= form.text_field :library_card_number, id: "library_card_number" %>
   </p>
 
   <p>
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, id: "password" %>
   </p>
 
   <p>

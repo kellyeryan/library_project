@@ -40,6 +40,7 @@ group :development, :test do
   gem "rails-controller-testing"
   gem "rspec-rails"
   gem "rubocop"
+  gem "capybara-selenium"
 end
 
 group :development do
@@ -51,7 +52,10 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem "capybara", ">= 2.15"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "phantomjs"
+  gem "poltergeist"
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
