@@ -10,6 +10,6 @@ RSpec.describe "Signin", type: :system do
 
     click_button "Submit"
 
-    binding.pry
+    expect(page).to have_text("Patron Account")
   end
 end

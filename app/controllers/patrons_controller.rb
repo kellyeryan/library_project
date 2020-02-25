@@ -32,7 +32,7 @@ private
       :first_name,
       :last_name,
       :password,
-      :password_confirmation,
+      :password_confirmation
     )
   end
 end

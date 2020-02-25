@@ -34,13 +34,13 @@ gem "bootsnap", ">= 1.4.2", require: false
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "capybara-selenium"
   gem "factory_bot_rails"
   gem "faker"
   gem "pry"
   gem "rails-controller-testing"
   gem "rspec-rails"
   gem "rubocop"
-  gem "capybara-selenium"
 end
 
 group :development do

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  before_action :library
+  before_action :library, except: :create
   skip_before_action :verify_authenticity_token
 
   def index

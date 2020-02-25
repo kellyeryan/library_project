@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :library do
-    name { "Casper Springs" }
-    street_address { "986 Kenyatta Street" }
-    city { "Ryanview" }
+    name { "Manny Home Stead" }
+    street_address { "986 Kenya Street" }
+    city { "Ryan" }
     state { "Narnia" }
-    region { "NE" }
-    id { 12 }
+    region { "SE" }
+    id { 1 }
   end
 end
