@@ -25,7 +25,8 @@ gem "active_model_serializers"
 gem "bcrypt", "~> 3.1.7"
 gem "fast_jsonapi"
 gem "sig"
-
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.4.1'
 # Use Active Storage variant
 # gem "image_processing", "~> 1.2"
 
