@@ -15,7 +15,7 @@
   )
 end
 
-110.times do
+120.times do
   Patron.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,

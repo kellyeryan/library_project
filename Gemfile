@@ -8,7 +8,7 @@ ruby "2.5.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "~> 6.0.1"
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem "puma", "~> 4.1"
 # Use SCSS for stylesheets
@@ -44,7 +44,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "listen", ">= 3.0.5", "< 3.2"
+  gem "listen"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
