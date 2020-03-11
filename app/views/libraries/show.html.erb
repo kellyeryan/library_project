@@ -1,13 +1,13 @@
-<br><h3>The <%= @library.name %> Library</h3>
+
+<br><h3 style="text-align: center">The <%= @library.name %> Library</h3>
 <h5>Library Address:</h5>
 <h5><%= @library.street_address %></h5>
 <h5><%= @library.city %>, <%= @library.state %></h5>
 <p>
-<h4><a href="/libraries/<%= @library.id %>/books" class="js-browse"> Browse</a> the library catalog.</h4>
+<h3><a href="/libraries/<%= @library.id %>/books" class="js-browse"> Browse</a> the library catalog.</h3>
 </p>
-
 <p>
-<h4>Feeling generous? <%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h4>
+<h3>Feeling generous? <%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h3>
 </p>
 
 <div class="js-catalog"></div>
