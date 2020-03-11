@@ -1,4 +1,4 @@
-<h2>Donate a Book!</h2>
+<br><h2>Donate a Book!</h2>
 
 <div class="book_donation">
 
@@ -24,7 +24,7 @@
       <%= ff.text_field :last_name, id: "author_last_name" %><br>
     </p>
   <% end %>
-    <p>
+    <p class="form-group">
     <%= f.label :genre %>
     <%= f.collection_select :genre_id, Genre.all, :id, :name %>
     </p>

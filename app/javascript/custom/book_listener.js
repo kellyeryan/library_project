@@ -1,5 +1,5 @@
 let template = `
-  <table id="bookTable">
+  <table id="bookTable" class="table table-hover">
       <thead>
           <tr>
             <th>Title</th>

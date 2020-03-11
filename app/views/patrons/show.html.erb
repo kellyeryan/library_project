@@ -11,60 +11,66 @@
 <h4>
   Here are the books you've checked out!<br>
 </h4>
-<table>
-  <tr>
-    <th>Book Title</th>
-    <th>Book Author</th>
-    <th>Genre</th>
-    <th>Library</th>
-    <th>Return Book</th>
-    <th>Book Details</th>
-  </tr>
-  <% @book_loans.each do |loan| %>
+<table class="table table-info">
+  <thead>
     <tr>
-      <td><%= loan.book.title %></td>
-      <td><%= loan.book.author.author_name %></td>
-      <td><%= loan.book.genre.name %></td>
-      <td><%= loan.book.library.name %></td>
+      <th>Book Title</th>
+      <th>Book Author</th>
+      <th>Genre</th>
+      <th>Library</th>
+      <th>Return Book</th>
+      <th>Book Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @book_loans.each do |loan| %>
+      <tr>
+        <td><%= loan.book.title %></td>
+        <td><%= loan.book.author.author_name %></td>
+          <td><%= loan.book.genre.name %></td>
+        <td><%= loan.book.library.name %></td>
 
-      <td>
-        <%= form_with url: book_loan_path(loan.id), method: :patch, local: true do |f| %>
-          <%= f.submit "Return this book" %>
-        <% end %>
-      </td>
-      <td>
-        <form action="/libraries/<%= loan.book.library_id %>/books/<%= loan.book.id %>" class="js-book-details" id="<%= loan.book.id %>" data-id="<%= loan.book.id %>">
-          <button type="submit">Click here for a description of the book</button>
-        </form>
-      </td>
+        <td>
+          <%= form_with url: book_loan_path(loan.id), method: :patch, local: true do |f| %>
+            <%= f.submit "Return this book" %>
+          <% end %>
+        </td>
+        <td>
+          <form action="/libraries/<%= loan.book.library_id %>/books/<%= loan.book.id %>" class="js-book-details" id="<%= loan.book.id %>" data-id="<%= loan.book.id %>">
+           <button type="submit">Click here for a description of the book</button>
+          </form>
+        </td>
     </tr>
   <% end %>
+</tbody>
 </table>
 <br>
-<p>
+<h5>
   To get started checking out a book, first choose the library closest to you:<br><br>
   <b> NorthEastern Narnia </b><br>
     <% @ne_library_regions.each do |library| %>
       <br><%= link_to library.name, library_path(library) %><br>
     <% end %>
-</p>
-<p>
+</h5>
+<h5>
+<br>
   <b> Southeastern Narnia </b><br>
     <% @se_library_regions.each do |library| %>
       <br><%= link_to library.name, library_path(library) %><br>
     <% end %>
-</p>
-<p>
+</h5>
+<br>
+<h5>
   <b> Northwestern Narnia </b><br>
     <% @nw_library_regions.each do |library| %>
       <br><%= link_to library.name, library_path(library) %><br>
     <% end %>
-</p>
+</h5>
+<br>
+<h5>
   <b> Southwestern Narnia </b><br>
     <% @sw_library_regions.each do |library| %>
       <br><%= link_to library.name, library_path(library) %><br>
     <% end %>
-</p>
+</h5>
 
-
-<%= link_to "Logout", logout_path %>
