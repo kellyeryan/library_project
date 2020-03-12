@@ -18,6 +18,6 @@ class Patron < ApplicationRecord
   end
 
   def library_card
-    rand(1e9...1e10).to_i
+    rand(1e8...1e9).to_i
   end
 end
