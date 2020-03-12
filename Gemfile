@@ -26,6 +26,7 @@ gem "fast_jsonapi"
 gem "sig"
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.4.1'
+gem "faker"
 # Use Active Storage variant
 # gem "image_processing", "~> 1.2"
 
@@ -36,7 +37,6 @@ group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "capybara-selenium"
   gem "factory_bot_rails"
-  gem "faker"
   gem "pry"
   gem "rails-controller-testing"
   gem "rspec-rails"
