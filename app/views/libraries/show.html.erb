@@ -1,13 +1,27 @@
 
 <br><h3 style="text-align: center">The <%= @library.name %> Library</h3>
-<h5>Library Address:</h5>
-<h5><%= @library.street_address %></h5>
-<h5><%= @library.city %>, <%= @library.state %></h5>
-<p>
-<h3><a href="/libraries/<%= @library.id %>/books" class="js-browse"> Browse</a> the library catalog.</h3>
-</p>
-<p>
-<h3>Feeling generous? <%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h3>
-</p>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h3>Library Address:</h3>
+      <h4><%= @library.street_address %></h4>
+      <h4><%= @library.city %>, <%= @library.state %></h4>
+    </div>
+    <div class="col-6">
+      <img src="https://americanlibrariesmagazine.org/wp-content/uploads/2016/04/academic-libraries.jpg" alt="Picture of books and computer" style="width:450px;height:300px;">
+  </div>
+</div>
+<br></br>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h3><a href="/libraries/<%= @library.id %>/books" class="js-browse"> Browse</a> the library catalog.</h3>
+    </div>
+    <div class="col-6">
+      <h3>Feeling generous? <%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h3>
+    </div>
+  </div>
+</div>
 
 <div class="js-catalog"></div>

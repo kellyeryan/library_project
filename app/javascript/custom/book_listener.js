@@ -71,7 +71,7 @@ class Book {
 }
 
 $(document).ready(function() {
-  $(".book_donation").submit(function(event) {
+  $("#book_donation").submit(function(event) {
     event.preventDefault();
     let data = event.target.elements
     let library_id = data[5].value

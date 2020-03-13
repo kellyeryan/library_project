@@ -1,7 +1,12 @@
 <body>
-<h1>Sign Up for a Library Account</h1>
+<br>
+<h1 style="text-align: center">Sign Up for a Library Account</h1>
 
-<h3><%= form_with scope: :patron, url: patrons_path, local: true do |form| %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+
+    <h3><%= form_with scope: :patron, url: patrons_path, local: true do |form| %>
 
   <% if @patron.errors.any? %>
     <div id="error_explanation">
@@ -17,23 +22,23 @@
   <% end %>
 
   <p>
-    <%= form.label :First_Name %>
-    <%= form.text_field :first_name %>
+    <%= form.label :First_Name %><br>
+    <%= form.text_field :first_name, class: "form-control-med" %>
   </p>
 
   <p>
-    <%= form.label :Last_Name %>
-    <%= form.text_field :last_name%>
+    <%= form.label :Last_Name %><br>
+    <%= form.text_field :last_name, class: "form-control-med" %>
   </p>
 
   <p>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, class: "form-control-med" %>
   </p>
 
   <p>
-    <%= form.label :password_confirmation, "Password Confirmation" %>
-    <%= form.password_field :password_confirmation %>
+    <%= form.label :password_confirmation, "Password Confirmation" %><br>
+    <%= form.password_field :password_confirmation, class: "form-control-med" %>
   </p>
 
   <p>
@@ -41,4 +46,9 @@
   </p>
 
 <% end %></h3>
+</div>
+
+<div class="col-6">
+  <img src="https://res.cloudinary.com/teepublic/image/private/s---g58pAod--/c_crop,x_10,y_10/c_fit,w_992/c_crop,g_north_west,h_972,w_1127,x_-70,y_-58/l_misc:transparent_1260/fl_layer_apply,g_north_west,x_-136,y_-200/c_mfit,g_north_east,u_misc:tapestry-l-l-gradient/e_displace,fl_layer_apply,x_0,y_19/l_upload:v1507037316:production:blanks:knoqtwkqk9vucfsy8ke0/fl_layer_apply,g_north_west,x_0,y_0/b_rgb:58c5c9/c_limit,f_jpg,h_630,q_90,w_630/v1536535469/production/designs/3132134_0.jpg" alt="Reading Rainbow" style="width:450px;height:450px;">
+</div>
 </body>
