@@ -34,6 +34,7 @@ class Book {
       } else {
         currentStatus =  "Book already checked out"
       }
+
       const book = new Book(currentBook.title,
                             currentBook.author.first_name,
                             currentBook.author.last_name,
@@ -50,23 +51,38 @@ class Book {
   }
 
   bookEl() {
-    return `
-    <tbody>
-      <tr>
-        <td>${this.title}</td>
-        <td>${this.last_name}, ${this.first_name}</td>
-        <td>${this.genre}</td>
-        <td>${this.library}</td>
-        <td>${this.bookStatus}</td>
+    let bookEl = `
+      <tbody>
+        <tr>
+          <td>${this.title}</td>
+          <td>${this.last_name}, ${this.first_name}</td>
+          <td>${this.genre}</td>
+          <td>${this.library}</td>
+          <td>${this.bookStatus}</td>
+      `
+
+      let checkOutButton = `
         <td>
           <form action="/book_loans" accept-charset="UTF-8" data-remote="false" method="post">
             <input type="hidden" name="book_id" value="${this.id}">
             <input type="submit" name="commit" value="Check out this book" data-disable-with="Check out this book">
           </form>
-        </td>
-      </tr>
-    </tbody>
+        </td>`
+
+      let noCheckOutButton = `
+        <td>
+        </td>`
+
+      let endOfTable = `
+        </tr>
+      </tbody>
     `
+
+    if (this.bookStatus === "Available") {
+      return bookEl.concat(checkOutButton, endOfTable)
+    } else {
+      return bookEl.concat(noCheckOutButton, endOfTable)
+    }
   }
 }
 
@@ -79,7 +95,6 @@ $(document).ready(function() {
 
     $.post(`/libraries/${library_id}/books.json`, values).done(function(info) {
       let book = new Book(info.title, info.author["first_name"], info.author["last_name"], info.genre["name"], info.library["name"], info["book_status"])
-
       template += book.bookEl()
       template += "</table>"
       $(".postResults").append(template)
