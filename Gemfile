@@ -27,6 +27,7 @@ gem "sig"
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.4.1'
 gem "faker"
+gem 'font_awesome5_rails'
 # Use Active Storage variant
 # gem "image_processing", "~> 1.2"
 

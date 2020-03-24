@@ -1,7 +1,11 @@
 <p><%= notice %></p>
 
-<div>
-<h5 style="text-align: left">Welcome, <%= @patron.name %>! Here's an overview of your library account. <br><br>Library card number:<b> <%= @patron.library_card_number %></b></h5>
+<div class="container">
+  <div class="row row-header">
+    <div class="col-12">
+      <h4 style="text-align: left">Welcome, <%= @patron.name %>! Here's an overview of your library account. <br><br>Library card number:<b> <%= @patron.library_card_number %></b></h5>
+    </div>
+  </div>
 </div>
 <br>
 <h4>My Checkouts:<br></h4>
@@ -9,12 +13,13 @@
 <table class="table table-info">
   <thead>
     <tr>
-      <th>Book Title</th>
-      <th>Book Author</th>
+      <th>Title</th>
+      <th>Author</th>
       <th>Genre</th>
       <th>Library</th>
       <th>Return Book</th>
       <th>Book Details</th>
+      <th>Due Date</th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +39,14 @@
             <button type="submit">Book Description</button>
           </form>
         </td>
+        <td>
+          <% due_date = (loan.created_at + 21.day).strftime("%m/%d/%Y")  %>
+          <% if (loan.created_at + 21.day) < Time.current %>
+            <h5>OVERDUE</h5>
+          <% else %>
+            <%= due_date %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -41,14 +54,14 @@
 <br>
 
 <div class="container">
-  <div class="row">
+  <div class="row row-content">
     <h5>To check out another book, first choose the library closest to you:</h5>
   </div>
 </div>
 <br>
 <div class="container">
-  <div class="row">
-    <div class="col-6">
+  <div class="row row-content">
+    <div class="col-12 col-sm-6">
       <h5>
         <b><u>Northeastern Narnia </u></b><br>
         <% @ne_library_regions.each do |library| %>
@@ -57,7 +70,7 @@
       </h5>
     </div>
 
-    <div class="col-6">
+    <div class="col-12 col-sm-6">
       <h5>
         <b><u>Southeastern Narnia </u> </b><br>
         <% @se_library_regions.each do |library| %>
@@ -71,8 +84,8 @@
 <br>
 
 <div class="container">
-  <div class="row">
-    <div class="col-6">
+  <div class="row row-content">
+    <div class="col-12 col-sm-6 order-sm-first">
       <h5>
         <b><u>Northwestern Narnia</u></b><br>
         <% @nw_library_regions.each do |library| %>
@@ -81,7 +94,7 @@
       </h5>
     </div>
 
-    <div class="col-6">
+    <div class="col-12 col-sm-6">
       <h5>
         <b><u> Southwestern Narnia </u></b><br>
         <% @sw_library_regions.each do |library| %>

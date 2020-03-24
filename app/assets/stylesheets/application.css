@@ -12,5 +12,22 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require bootstrap
  */
 
+.navbar-dark {
+  background-color: #22c9c9;
+}
+
+.navbar-brand {
+  color: #101212
+}
+
+table {
+  font-family: futura;
+}
+
+.container {
+  font-family: futura;
+}

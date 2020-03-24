@@ -108,6 +108,10 @@ GEM
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffi (1.11.3)
+    font_assets (0.1.14)
+      rack
+    font_awesome5_rails (1.0.0)
+      railties (>= 4.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.7.1)
@@ -290,6 +294,8 @@ DEPENDENCIES
   factory_bot_rails
   faker
   fast_jsonapi
+  font_assets
+  font_awesome5_rails
   jbuilder (~> 2.7)
   jquery-rails
   listen
