@@ -30,7 +30,7 @@
   <tbody>
     <% @book_loans.each do |loan| %>
       <tr>
-        <td><%= loan.book.title %></td>
+        <td><%= link_to loan.book.title, library_book_path(loan.book.library_id) %></td>
         <td><%= loan.book.author.author_name %></td>
         <td><%= loan.book.genre.name %></td>
         <td><%= loan.book.library.name %></td>
