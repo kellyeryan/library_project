@@ -22,6 +22,7 @@
 
 .navbar-brand {
   color: #FF6103;
+  font-family: futura;
 }
 
 table {
@@ -30,6 +31,14 @@ table {
 
 .container {
   font-family: futura;
+}
+
+tr:nth-child(even) {
+  background: #CCC;
+}
+
+tr:nth-child(odd) {
+  background: #FFF;
 }
 
 .card-header {

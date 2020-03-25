@@ -95,6 +95,7 @@ $(document).ready(function() {
     let values = $(data).serialize();
 
     $.post(`/libraries/${library_id}/books.json`, values).done(function(info) {
+      console.log(info)
       let book = new Book(info.title, info.author["first_name"], info.author["last_name"], info.genre["name"], info.library["name"], info["book_status"])
       template += book.bookEl()
       template += "</table>"
