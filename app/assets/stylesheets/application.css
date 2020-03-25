@@ -11,17 +11,17 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require font-awesome
  *= require bootstrap
+ *= require_self
  */
 
 .navbar-dark {
-  background-color: #22c9c9;
+  background-color: #00688B;
 }
 
 .navbar-brand {
-  color: #101212
+  color: #FF6103;
 }
 
 table {
@@ -30,4 +30,11 @@ table {
 
 .container {
   font-family: futura;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #03A89E;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }

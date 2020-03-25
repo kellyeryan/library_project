@@ -1,24 +1,19 @@
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Genre</th>
-    <th>Libraries</th>
-    <th>Check Out</th>
-  </tr>
-  <tr>
-    <th><%= @book.title %></th>
-    <th><%= @book.author.author_name%></th>
-    <th><%= @book.genre.name %></th>
-    <th><%= @libraries.name %></th>
-    <th>
-    <% if !@book.checked_out? %>
-          <%= form_with(model: @book.book_loans.build) do |f| %>
-            <input type="hidden" name="book_id" value="<%= @book.id %>" />
-            <%= f.submit "Check out this book" %>
-          <% end %>
-        </th>
-      <% end %>
-  </tr>
-</table>
+<div class="col-sm-6">
+  <div class="card">
+    <h3 class="card-header"><%= @book.title %></h3>
+    <div class="card-body">
+      <dl class="row">
+        <dt class="col-6">Author</dt>
+        <dd class="col-6"><%= @book.author.author_name %></dd>
+        <dt class="col-6">Genre</dt>
+        <dd class="col-6"><%= @book.genre.name %></dd>
+        <dt class="col-6">Description</dt>
+        <dd class="col-6"><%= @book.description %></dd>
+        <dt class="col-6">Library</dt>
+        <dd class="col-6"><%= @libraries.name %></dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
 

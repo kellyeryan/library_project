@@ -1,6 +1,7 @@
 let template = `
-  <table id="bookTable" class="table table-hover">
-      <thead>
+<div class="table-responsive">
+  <table id="bookTable" class="table table-striped table-hover">
+      <thead class="thead-dark">
           <tr>
             <th>Title</th>
             <th>Author</th>
