@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid">
         <% if !current_patron %>
-          <a class="navbar-brand mr-auto" href="<%= root_url %>"/><span style=""><i class="fas fa-user-plus"> Login or Sign up Page</i></span></a>
+          <a class="navbar-brand mr-auto" href="<%= root_url %>"/><span style=""><i class="fas fa-user-plus"></i> Login or Sign up Page</span></a>
         <% else %>
           <a class="navbar-brand mr-auto" id="<%= session[:patron_id] %>" href="<%= patron_path(session[:patron_id]) %>"/><span class="fas fa-book-reader"></span> Patron Account</a>
           <a class="navbar-brand" href="<%= logout_url %>"/><span class="fas fa-sign-out-alt"></span> Logout</a>
