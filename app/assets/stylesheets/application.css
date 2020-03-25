@@ -47,3 +47,7 @@ tr:nth-child(odd) {
     background-color: #03A89E;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
+
+.blockquote {
+  font-size: large;
+}
