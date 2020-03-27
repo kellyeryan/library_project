@@ -18,8 +18,8 @@
         </div>
     </div>
     <div class="col-5 offset-1">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Books_on_a_shelf_perspective.jpg" alt="Books on a shelf"style="width:300px;height:300px;">
-      <footer class="image-footer"><cite>citation: Jess Mann</cite></footer>
+      <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Books_on_a_shelf_perspective.jpg" alt="Books on a shelf"style="width:300px;height:300px;">
+      <footer class="image-footer"><cite><a href="https://upload.wikimedia.org/wikipedia/commons/c/c0/Books_on_a_shelf_perspective.jpg">citation: Jess Mann</a></cite></footer>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
   <tbody>
     <% @book_loans.each do |loan| %>
       <tr>
-        <td><%= link_to loan.book.title, library_book_path(loan.book.library_id) %></td>
+        <td><%= link_to loan.book.title, library_book_path(loan.book.library_id, loan.book.id) %></td>
         <td><%= loan.book.author.author_name %></td>
         <td><%= loan.book.genre.name %></td>
         <td><%= loan.book.library.name %></td>

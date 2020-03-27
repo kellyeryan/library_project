@@ -33,7 +33,7 @@ class Book {
       } else if (currentBook.book_loans[3] === true) {
         currentStatus =  "Available"
       } else {
-        currentStatus =  "Book already checked out"
+        currentStatus =  "Checked out"
       }
 
       const book = new Book(currentBook.title,
@@ -93,10 +93,11 @@ $(document).ready(function() {
     let data = event.target.elements
     let library_id = data[5].value
     let values = $(data).serialize();
+    console.log(values)
 
     $.post(`/libraries/${library_id}/books.json`, values).done(function(info) {
       console.log(info)
-      let book = new Book(info.title, info.author["first_name"], info.author["last_name"], info.genre["name"], info.library["name"], info["book_status"])
+      let book = new Book(info.title, info.author["first_name"], info.author["last_name"], info.genre["name"], info.library["name"], "Donated")
       template += book.bookEl()
       template += "</table>"
       $(".postResults").append(template)
