@@ -3,6 +3,7 @@
 class Patron < ApplicationRecord
   has_many :book_loans
   has_many :books, through: :book_loans
+  has_many :reviews
 
   has_secure_password
 

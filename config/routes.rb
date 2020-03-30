@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :authors, only: [:index, :new, :create, :show]
   resources :patrons, only: [:show, :new, :create]
   resources :book_loans, only: [:index, :create, :update]
+  resources :reviews
   root "static_pages#home"
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"

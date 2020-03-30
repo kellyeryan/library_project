@@ -1,19 +1,49 @@
-<div class="col-sm-6">
-  <div class="card">
-    <h3 class="card-header"><%= @book.title %></h3>
-    <div class="card-body">
-      <dl class="row">
-        <dt class="col-6">Author</dt>
-        <dd class="col-6"><%= @book.author.author_name %></dd>
-        <dt class="col-6">Genre</dt>
-        <dd class="col-6"><%= @book.genre.name %></dd>
-        <dt class="col-6">Description</dt>
-        <dd class="col-6"><%= @book.description %></dd>
-        <dt class="col-6">Library</dt>
-        <dd class="col-6"><%= @libraries.name %></dd>
-      </dl>
+<div class="container">
+  <div class="row row-content">
+    <div class="col-sm-6">
+      <div class="card">
+        <h3 class="card-header"><%= @book.title %></h3>
+          <div class="card-body">
+            <dl class="row">
+              <dt class="col-6">Author</dt>
+              <dd class="col-6"><%= @book.author.author_name %></dd>
+              <dt class="col-6">Genre</dt>
+              <dd class="col-6"><%= @book.genre.name %></dd>
+              <dt class="col-6">Library</dt>
+              <dd class="col-6"><%= @libraries.name %></dd>
+            </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <h4>Add a comment:</h4>
+        <%= form_with scope: :review, url: reviews_path, local: true do |form| %>
+        <p>
+          <%= form.label :body %><br>
+          <%= form.text_area :body %>
+        </p>
+        <p>
+          <%= hidden_field_tag(:patron_id, session[:patron_id]) %>
+          <%= hidden_field_tag(:book, @book.id) %>
+          <%= form.submit %>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row row-content">
+    <nav class="col-sm-6">
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-description-tab" data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true">Description</a>
+        <a class="nav-item nav-link" id="nav-reviews-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
 
 

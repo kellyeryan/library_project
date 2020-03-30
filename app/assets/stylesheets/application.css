@@ -48,6 +48,15 @@ tr:nth-child(odd) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+.border {
+  color: #03A89E
+}
+
 .blockquote {
   font-size: large;
 }
+
+.tab-content {
+  display: block;
+}
+
