@@ -1,11 +1,9 @@
 # frozen_string_literal: true
+# frozen_string_literal: true
 
 class ReviewsController < ApplicationController
   def create
-    @review = Review.new(review_params)
-    if @review.save
-      redirect_to @review
-    end
+    @review = Review.create(review_params)
   end
 
   def show
@@ -13,9 +11,8 @@ class ReviewsController < ApplicationController
   end
 
 private
+
   def review_params
-    params.require(:review).permit(:book,
-                                  :patron,
-                                  review: [:body])
+    params.require(:review).permit(:book_id, :patron_id, :comment)
   end
 end

@@ -17,18 +17,19 @@
     </div>
 
     <div class="col-sm-6">
-      <h4>Add a comment:</h4>
-        <%= form_with scope: :review, url: reviews_path, local: true do |form| %>
-        <p>
-          <%= form.label :body %><br>
-          <%= form.text_area :body %>
-        </p>
-        <p>
-          <%= hidden_field_tag(:patron_id, session[:patron_id]) %>
-          <%= hidden_field_tag(:book, @book.id) %>
-          <%= form.submit %>
-        </p>
-      <% end %>
+      <div class="form-group">
+        <h4 >Add a Review:</h4>
+          <%= form_with scope: :review, url: reviews_path, local: true do |form| %>
+            <p>
+            <%= form.text_area :comment, class: "form-control", placeholder: "Enter review"  %>
+            </p>
+            <p>
+              <%= form.hidden_field :patron_id, value: session[:patron_id] %>
+              <%= form.hidden_field :book_id, value: @book.id %>
+              <%= form.submit %>
+            </p>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
@@ -38,11 +39,30 @@
     <nav class="col-sm-6">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-description-tab" data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true">Description</a>
-        <a class="nav-item nav-link" id="nav-reviews-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews</a>
+        <a class="nav-item nav-link" id="nav-reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews</a>
       </div>
     </nav>
   </div>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
+      <%= @book.description %>
+    </div>
+
+    <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
+      <div class="container">
+        <% @book.reviews.map do |review| %>
+          <div class="row row-content pb-2 pr-3 mr-5">
+            <span class="border col-sm-6 p-2">
+                <%= review.comment %><br>
+                Posted by: <cite><%= review.patron.first_name %> <%= review.patron.last_name %></cite><br>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 
 
