@@ -22,7 +22,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid">
         <% if !current_patron %>
-          <a class="navbar-brand mr-auto" href="<%= root_url %>"/><span style=""><i class="fas fa-user-plus"></i> Login or Sign up Page</span></a>
+          <a class="navbar-brand mr-auto" data-toggle="modal" data-target="#loginModal"/><span style=""><i class="fa fa-sign-in"></i> Login </span></a>
+          <a class="navbar-brand mr-5" href="/patrons/new"/><span style=""><i class="fas fa-user-plus"></i> Sign up </span></a>
         <% else %>
           <a class="navbar-brand mr-auto" id="<%= session[:patron_id] %>" href="<%= patron_path(session[:patron_id]) %>"/><span class="fas fa-book-reader"></span> Patron Account</a>
           <a class="navbar-brand" href="<%= logout_url %>"/><span class="fas fa-sign-out-alt"></span> Logout</a>
@@ -34,6 +35,8 @@
         </ul>
       </div><!--/.nav-collapse -->
     </nav>
+
+    <%= render "/layouts/signin" %>
 
     <!-- content -->
     <div class="container"  role="main">

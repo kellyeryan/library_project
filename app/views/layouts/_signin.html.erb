@@ -1,0 +1,28 @@
+<div id="loginModal" class="modal fade" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <%= form_with scope: :patron, url: "/signin", local: true do |form| %>
+                        <p>
+                        <%= form.label :library_card_number %>
+                        <%= form.text_field :library_card_number, id: "library_card_number", class: "form-control" %>
+                        </p>
+
+                        <p>
+                        <%= form.label :password %>
+                        <%= form.password_field :password, id: "password", class: "form-control" %>
+                        </p>
+
+                        <p>
+                        <%= form.submit :Submit %>
+                        </p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>

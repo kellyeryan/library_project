@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     patron = Patron.find_by(library_card_number: library_card_number)
+    binding.pry
     if patron&.authenticate(params[:patron][:password])
       session[:patron_id] = patron.id
       redirect_to patron_path(patron), notice: "Success! You've been logged in!"
