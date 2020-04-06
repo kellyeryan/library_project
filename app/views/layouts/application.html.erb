@@ -22,8 +22,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid">
         <% if !current_patron %>
-          <a class="navbar-brand mr-auto" data-toggle="modal" data-target="#loginModal"/><span style=""><i class="fa fa-sign-in"></i> Login </span></a>
-          <a class="navbar-brand mr-5" href="/patrons/new"/><span style=""><i class="fas fa-user-plus"></i> Sign up </span></a>
+          <a class="navbar-brand mr-auto" href="/"/><span style=""><i class="fa fa-home"></i> Home </span></a>
+          <a class="navbar-brand ml-4" data-toggle="modal" data-target="#loginModal"/><span style=""><i class="fa fa-sign-in"></i> Login </span></a>
+          <a class="navbar-brand ml-5" href="/patrons/new"/><span style=""><i class="fas fa-user-plus"></i> Sign up </span></a>
         <% else %>
           <a class="navbar-brand mr-auto" id="<%= session[:patron_id] %>" href="<%= patron_path(session[:patron_id]) %>"/><span class="fas fa-book-reader"></span> Patron Account</a>
           <a class="navbar-brand" href="<%= logout_url %>"/><span class="fas fa-sign-out-alt"></span> Logout</a>
@@ -47,5 +48,24 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                }
+                else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
