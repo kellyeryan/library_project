@@ -17,7 +17,7 @@
  */
 
 .navbar-dark {
-  background-color: #00688B;
+  background-color: #282A36;
 }
 
 .navbar-brand {
@@ -30,6 +30,10 @@ table {
 }
 
 .container {
+  font-family: futura;
+}
+
+.modal-content {
   font-family: futura;
 }
 
