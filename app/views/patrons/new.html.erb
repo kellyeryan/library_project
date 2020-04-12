@@ -10,9 +10,9 @@
 
       <% if @patron.errors.any? %>
         <div id="error_explanation">
-          <h2>
+          <h3>
             <%= pluralize(@patron.errors.count, "error") %> prevented your account from being saved:
-          </h2>
+          </h3>
           <br>
             <ul>
               <% @patron.errors.full_messages.each do |msg| %>

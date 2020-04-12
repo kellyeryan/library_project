@@ -16,8 +16,8 @@
           </blockquote>
         </div>
     </div>
-    <div class="col-5 offset-1">
-      <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Books_on_a_shelf_perspective.jpg" alt="Books on a shelf"style="width:300px;height:300px;">
+    <div class="col-6">
+      <img class="img-fluid rounded" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Books_on_a_shelf_perspective.jpg" alt="Books on a shelf"style="width:3100% height:auto;">
       <footer class="image-footer"><cite><a href="https://upload.wikimedia.org/wikipedia/commons/c/c0/Books_on_a_shelf_perspective.jpg">citation: Jess Mann</a></cite></footer>
     </div>
 </div>
@@ -71,55 +71,41 @@
 </div>
 <br>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row row-content">
-    <h5>To check out another book, first choose the library closest to you:</h5>
+    <h4>To check out another book, first choose the library closest to you:</h4>
   </div>
 </div>
 <br>
-<div class="container">
+<div class="container-fluid">
   <div class="row row-content">
-    <div class="col-12 col-sm-6">
-      <h5>
+    <div class="col-12 col-sm-4">
+      <h4>
         <b><u>Northeastern Narnia </u></b><br>
         <% @ne_library_regions.each do |library| %>
           <br><%= link_to library.name, library_path(library) %><br>
         <% end %>
-      </h5>
+      </h4>
     </div>
 
-    <div class="col-12 col-sm-6">
-      <h5>
+    <div class="col-12 col-sm-4">
+      <h4>
         <b><u>Southeastern Narnia </u> </b><br>
         <% @se_library_regions.each do |library| %>
           <br><%= link_to library.name, library_path(library) %><br>
         <% end %>
-      </h5>
+      </h4>
     </div>
-  </div>
-</div>
-
-<br>
-
-<div class="container">
-  <div class="row row-content">
-    <div class="col-12 col-sm-6 order-sm-first">
-      <h5>
+  <div class="col-12 col-sm-4">
+      <h4>
         <b><u>Northwestern Narnia</u></b><br>
         <% @nw_library_regions.each do |library| %>
           <br><%= link_to library.name, library_path(library) %><br>
         <% end %>
-      </h5>
-    </div>
-
-    <div class="col-12 col-sm-6">
-      <h5>
-        <b><u> Southwestern Narnia </u></b><br>
-        <% @sw_library_regions.each do |library| %>
-          <br><%= link_to library.name, library_path(library) %><br>
-        <% end %>
-      </h5>
+      </h4>
     </div>
   </div>
 </div>
+<br>
+<br>
 
