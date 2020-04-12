@@ -1,39 +1,47 @@
-<br><h2 style="text-align: center"><b>Donate a Book</b></h2>
-
-<div id="book_donation">
-
-<%= form_with(model: [@library, @book], data: { turbolinks: false }) do |f| %>
-
-  <% if @book.errors.any? %>
-      <% @book.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-  <% end %>
-  <% else %>
-
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title, id: "book_title", class: "form-control-med", placeholder: "Title" %>
-  </p>
-  <%= f.fields_for :author, @author do |ff| %>
-    <p>
-      <%= ff.label "Author's first name" %><br>
-      <%= ff.text_field :first_name, id: "author_first_name", class: "form-control-med", placeholder: "First name" %>
-    </p>
-    <p>
-      <%= ff.label "Author's last name" %><br>
-      <%= ff.text_field :last_name, id: "author_last_name", class: "form-control-med", placeholder: "Last name"%>
-    </p>
-  <% end %>
-    <p class="form-group">
-    <%= f.label :genre %><br>
-    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
-    </p>
-    <%= hidden_field_tag(:library_id, @library.id) %>
-    <%= hidden_field_tag(:patron_id, session[:patron_id]) %>
-    <%= hidden_field_tag(:book_loans, @book.book_loans) %><br>
-  <%= f.submit %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+    <br><h2 class="col-12 text-center"><b>Donate a Book</b></h2>
+    <cite class="col-12 text-center">Help us grow our collection!</cite>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div id="book_donation"><br>
+        <%= form_with(model: [@library, @book], data: { turbolinks: false }) do |f| %>
+          <% if @book.errors.any? %>
+            <% @book.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          <% end %>
+        <% else %>
+          <p>
+            <%= f.label :title %><br>
+            <%= f.text_field :title, id: "book_title", class: "form-control", placeholder: "Title" %>
+          </p>
+          <%= f.fields_for :author, @author do |ff| %>
+            <p>
+              <%= ff.label "Author's first name" %><br>
+              <%= ff.text_field :first_name, id: "author_first_name", class: "form-control", placeholder: "First name" %>
+            </p>
+            <p>
+              <%= ff.label "Author's last name" %><br>
+              <%= ff.text_field :last_name, id: "author_last_name", class: "form-control", placeholder: "Last name"%>
+            </p>
+          <% end %>
+            <p class="form-group">
+            <%= f.label :genre %><br>
+            <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+            </p>
+            <%= hidden_field_tag(:library_id, @library.id) %>
+            <%= hidden_field_tag(:patron_id, session[:patron_id]) %>
+            <%= hidden_field_tag(:book_loans, @book.book_loans) %><br>
+          <%= f.submit %>
+          <% end %>
+      </div>
+    </div>
+    <div class="col-6"><br>
+        <%= image_tag("book_sale.jpeg", class: "img-fluid rounded", width: "100%", height: "400px") %>
+    </div>
+  </div>
 </div>
 <br>
 <div class="postResults"></div>

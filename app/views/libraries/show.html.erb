@@ -1,25 +1,21 @@
 
-<br><h3 class="border" style="text-align: center">The <%= @library.name %> Library</h3>
+<br><h3 style="text-align: center">The <%= @library.name %> Library</h3>
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-4">
       <h3>Library Address:</h3>
       <h4><%= @library.street_address %></h4>
       <h4><%= @library.city %>, <%= @library.state %></h4>
+      <br>
+      <h4><a href="/libraries/<%= @library.id %>/books" class="js-browse"> Browse</a> the library catalog.</h4>
+      <br>
+      <h4><%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h4>
+    </div>
+    <div class="col-7"> 
+        <%= image_tag("library_picture.jpeg", class: "image-fluid", width: "100%", height: "400px") %>
     </div>
   </div>
-<br></br>
-  <div class="row">
-    <div class="col-6">
-      <h3><a href="/libraries/<%= @library.id %>/books" class="js-browse"> Browse</a> the library catalog.</h3>
-    </div>
-    <div class="col-6">
-      <h3><%= link_to "Donate", new_library_book_path(@library) %> a book to the library.</h3>
-    </div>
-  </div>
-</div>
 <br>
-<br>
-<div class="js-catalog"></div>
+<div class="js-catalog" id="book-catalog"></div>
 
